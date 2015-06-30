@@ -146,7 +146,7 @@
             this.button_upload_slika.Name = "button_upload_slika";
             this.button_upload_slika.Size = new System.Drawing.Size(90, 23);
             this.button_upload_slika.TabIndex = 15;
-            this.button_upload_slika.Text = "Вчитај слика";
+            this.button_upload_slika.Text = "Додади слика";
             this.button_upload_slika.UseVisualStyleBackColor = true;
             // 
             // tB_korisnichki_kod
