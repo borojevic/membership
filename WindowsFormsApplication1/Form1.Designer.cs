@@ -242,7 +242,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "e-mail:";
+            this.label3.Text = "Е-mail:";
             // 
             // textBox2
             // 
