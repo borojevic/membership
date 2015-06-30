@@ -15,22 +15,49 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 
-            label25.Text = "25.01.1993";
-            label26.Text = "27-06-2015";
+          
+            dateTimePicker3.MaxDate = DateTime.Today.AddDays(1);
+            dateTimePicker3.Value = DateTime.Today;
+            
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
+            dateTimePicker3.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
 
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
             dateTimePicker4.Visible = true;
             dateTimePicker4.Enabled = true;
             //DateTime dt = Convert.ToDateTime(label26.Text);
             //dateTimePicker4.Value = dt;
-            label26.Visible = false;
+            
         }
+
+
+        //
+        // upload image
+        //
+        private void button_upload_slika_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox3.Image = new Bitmap(open.FileName);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox2.Image = new Bitmap(open.FileName);
+            }
+        }
+        //
+
     }
 }

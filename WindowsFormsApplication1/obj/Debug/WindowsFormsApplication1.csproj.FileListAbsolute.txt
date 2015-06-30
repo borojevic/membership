@@ -6,3 +6,11 @@ C:\Users\anya\Desktop\Gold Membership\GIT test\membership\WindowsFormsApplicatio
 C:\Users\anya\Desktop\Gold Membership\GIT test\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\anya\Desktop\Gold Membership\GIT test\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\anya\Desktop\Gold Membership\GIT test\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
