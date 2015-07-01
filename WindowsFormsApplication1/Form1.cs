@@ -107,12 +107,12 @@ namespace WindowsFormsApplication1
 
             //g.DrawString("Спортски Центар \"Борис Трајковски\" ", new Font("Arial", 11), Brushes.Black, x, y);
             //y += fltLineHeight;
-            g.DrawImage(pictureBox4.Image, x, y, 190, 110);
-            x += 250;
+            g.DrawImage(pictureBox4.Image, x, y, 190, 100);
+            x += 310;
             g.DrawImage(pictureBox5.Image, x, y, 260, 75);
             //y += fltLineHeight;
-            y += 130;
-            
+            y += 150;
+            x -= 310;
             g.DrawString(l1  + tB1, printFont, Brushes.Black, x, y);
             y += fltLineHeight;
             g.DrawString(l2  + tB2, printFont, Brushes.Black, x, y);
@@ -129,8 +129,8 @@ namespace WindowsFormsApplication1
             y += fltLineHeight;
             g.DrawString(l8 , printFont, Brushes.Black, x, y);
             y += fltLineHeight;
-            y += 10;
-            g.DrawImage(pictureBox3.Image, x, y, 168, 200);
+            y += 20;
+            g.DrawImage(pictureBox3.Image, x, y, 166, 200);
 
         }
         //
