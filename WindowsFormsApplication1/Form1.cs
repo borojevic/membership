@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -60,7 +62,19 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //validacii
+            //
+            //
+            MemoryStream ms = new MemoryStream();
+            pictureBox3.Image.Save(ms, ImageFormat.Jpeg);
+            FunctionClass.Insert_User(textBox1.Text, textBox2.Text, textBox3.Text, ms.ToArray(), textBox4.Text, dateTimePicker1.Value, dateTimePicker2.Value);
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            pictureBox3.Image = null;
+            textBox4.Text = "";
+            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker2.Value = DateTime.Today;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -133,7 +147,15 @@ namespace WindowsFormsApplication1
             g.DrawImage(pictureBox3.Image, x, y, 166, 200);
 
         }
-        //
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+     
+     
 
     }
 }
