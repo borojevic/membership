@@ -14,3 +14,11 @@ C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\ob
 C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\anya\Desktop\Gold Membership\GIT\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\membership\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\membership\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
