@@ -31,3 +31,4 @@ C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\Window
 C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Print.resources

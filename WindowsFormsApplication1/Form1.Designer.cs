@@ -35,13 +35,14 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_printForm = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button_upload_slika = new System.Windows.Forms.Button();
-            this.tB_korisnichki_kod = new System.Windows.Forms.TextBox();
+            this.tb_activationCode = new System.Windows.Forms.TextBox();
             this.L_korisnichki_kod = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
@@ -57,19 +58,19 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tb_t2_time = new System.Windows.Forms.TextBox();
+            this.btn_t2_submit = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tb_t2_serviceID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_t2_dateTo = new System.Windows.Forms.Label();
+            this.pb_t2_photo = new System.Windows.Forms.PictureBox();
+            this.lbl_t2_dateFrom = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.lbl_t2_surname = new System.Windows.Forms.Label();
+            this.lbl_t2_name = new System.Windows.Forms.Label();
+            this.tb_t2_userCode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
@@ -104,7 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_t2_photo)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -124,13 +125,14 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_printForm);
             this.tabPage1.Controls.Add(this.pictureBox5);
             this.tabPage1.Controls.Add(this.pictureBox4);
             this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.label27);
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.button_upload_slika);
-            this.tabPage1.Controls.Add(this.tB_korisnichki_kod);
+            this.tabPage1.Controls.Add(this.tb_activationCode);
             this.tabPage1.Controls.Add(this.L_korisnichki_kod);
             this.tabPage1.Controls.Add(this.dateTimePicker2);
             this.tabPage1.Controls.Add(this.label14);
@@ -153,6 +155,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Нов корисник";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_printForm
+            // 
+            this.btn_printForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_printForm.Location = new System.Drawing.Point(271, 613);
+            this.btn_printForm.Name = "btn_printForm";
+            this.btn_printForm.Size = new System.Drawing.Size(145, 30);
+            this.btn_printForm.TabIndex = 21;
+            this.btn_printForm.Text = "Печати форма";
+            this.btn_printForm.UseVisualStyleBackColor = true;
+            this.btn_printForm.Click += new System.EventHandler(this.btn_printForm_Click);
             // 
             // pictureBox5
             // 
@@ -178,9 +191,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(94, 620);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(94, 613);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(103, 23);
+            this.button7.Size = new System.Drawing.Size(145, 30);
             this.button7.TabIndex = 18;
             this.button7.Text = "Печати";
             this.button7.UseVisualStyleBackColor = true;
@@ -217,13 +231,13 @@
             this.button_upload_slika.UseVisualStyleBackColor = true;
             this.button_upload_slika.Click += new System.EventHandler(this.button_upload_slika_Click);
             // 
-            // tB_korisnichki_kod
+            // tb_activationCode
             // 
-            this.tB_korisnichki_kod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tB_korisnichki_kod.Location = new System.Drawing.Point(308, 295);
-            this.tB_korisnichki_kod.Name = "tB_korisnichki_kod";
-            this.tB_korisnichki_kod.Size = new System.Drawing.Size(277, 24);
-            this.tB_korisnichki_kod.TabIndex = 14;
+            this.tb_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_activationCode.Location = new System.Drawing.Point(308, 295);
+            this.tb_activationCode.Name = "tb_activationCode";
+            this.tb_activationCode.Size = new System.Drawing.Size(277, 24);
+            this.tb_activationCode.TabIndex = 14;
             // 
             // L_korisnichki_kod
             // 
@@ -361,13 +375,13 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox12);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.tb_t2_time);
+            this.tabPage2.Controls.Add(this.btn_t2_submit);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.tb_t2_serviceID);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.tb_t2_userCode);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -377,25 +391,26 @@
             this.tabPage2.Text = "Активност";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // tb_t2_time
             // 
-            this.textBox12.Enabled = false;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(336, 500);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(280, 24);
-            this.textBox12.TabIndex = 8;
+            this.tb_t2_time.Enabled = false;
+            this.tb_t2_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t2_time.Location = new System.Drawing.Point(336, 500);
+            this.tb_t2_time.Name = "tb_t2_time";
+            this.tb_t2_time.ReadOnly = true;
+            this.tb_t2_time.Size = new System.Drawing.Size(280, 24);
+            this.tb_t2_time.TabIndex = 8;
             // 
-            // button2
+            // btn_t2_submit
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(471, 603);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 30);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Внеси";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_t2_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t2_submit.Location = new System.Drawing.Point(471, 603);
+            this.btn_t2_submit.Name = "btn_t2_submit";
+            this.btn_t2_submit.Size = new System.Drawing.Size(145, 30);
+            this.btn_t2_submit.TabIndex = 7;
+            this.btn_t2_submit.Text = "Внеси";
+            this.btn_t2_submit.UseVisualStyleBackColor = true;
+            this.btn_t2_submit.Click += new System.EventHandler(this.btn_t2_submit_Click);
             // 
             // label12
             // 
@@ -407,13 +422,13 @@
             this.label12.TabIndex = 5;
             this.label12.Text = "Време:";
             // 
-            // textBox6
+            // tb_t2_serviceID
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(336, 448);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(280, 24);
-            this.textBox6.TabIndex = 4;
+            this.tb_t2_serviceID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t2_serviceID.Location = new System.Drawing.Point(336, 448);
+            this.tb_t2_serviceID.Name = "tb_t2_serviceID";
+            this.tb_t2_serviceID.Size = new System.Drawing.Size(280, 24);
+            this.tb_t2_serviceID.TabIndex = 4;
             // 
             // label11
             // 
@@ -429,46 +444,47 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.lbl_t2_dateTo);
+            this.panel1.Controls.Add(this.pb_t2_photo);
+            this.panel1.Controls.Add(this.lbl_t2_dateFrom);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.lbl_t2_surname);
+            this.panel1.Controls.Add(this.lbl_t2_name);
             this.panel1.Location = new System.Drawing.Point(38, 51);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 280);
             this.panel1.TabIndex = 2;
             // 
-            // label15
+            // lbl_t2_dateTo
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(39, 179);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 18);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "// дата до";
+            this.lbl_t2_dateTo.AutoSize = true;
+            this.lbl_t2_dateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t2_dateTo.Location = new System.Drawing.Point(39, 179);
+            this.lbl_t2_dateTo.Name = "lbl_t2_dateTo";
+            this.lbl_t2_dateTo.Size = new System.Drawing.Size(74, 18);
+            this.lbl_t2_dateTo.TabIndex = 5;
+            this.lbl_t2_dateTo.Text = "// дата до";
             // 
-            // pictureBox1
+            // pb_t2_photo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(387, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(190, 232);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pb_t2_photo.BackColor = System.Drawing.Color.White;
+            this.pb_t2_photo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_t2_photo.Location = new System.Drawing.Point(387, 24);
+            this.pb_t2_photo.Name = "pb_t2_photo";
+            this.pb_t2_photo.Size = new System.Drawing.Size(190, 232);
+            this.pb_t2_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_t2_photo.TabIndex = 4;
+            this.pb_t2_photo.TabStop = false;
             // 
-            // label10
+            // lbl_t2_dateFrom
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(39, 156);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 18);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "// дата од";
+            this.lbl_t2_dateFrom.AutoSize = true;
+            this.lbl_t2_dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t2_dateFrom.Location = new System.Drawing.Point(39, 156);
+            this.lbl_t2_dateFrom.Name = "lbl_t2_dateFrom";
+            this.lbl_t2_dateFrom.Size = new System.Drawing.Size(74, 18);
+            this.lbl_t2_dateFrom.TabIndex = 3;
+            this.lbl_t2_dateFrom.Text = "// дата од";
             // 
             // label9
             // 
@@ -480,33 +496,34 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Важност:";
             // 
-            // label8
+            // lbl_t2_surname
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(39, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 18);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "// презиме";
+            this.lbl_t2_surname.AutoSize = true;
+            this.lbl_t2_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t2_surname.Location = new System.Drawing.Point(39, 67);
+            this.lbl_t2_surname.Name = "lbl_t2_surname";
+            this.lbl_t2_surname.Size = new System.Drawing.Size(79, 18);
+            this.lbl_t2_surname.TabIndex = 1;
+            this.lbl_t2_surname.Text = "// презиме";
             // 
-            // label7
+            // lbl_t2_name
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(39, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 18);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "// име";
+            this.lbl_t2_name.AutoSize = true;
+            this.lbl_t2_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t2_name.Location = new System.Drawing.Point(39, 44);
+            this.lbl_t2_name.Name = "lbl_t2_name";
+            this.lbl_t2_name.Size = new System.Drawing.Size(47, 18);
+            this.lbl_t2_name.TabIndex = 0;
+            this.lbl_t2_name.Text = "// име";
             // 
-            // textBox5
+            // tb_t2_userCode
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(336, 400);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(280, 24);
-            this.textBox5.TabIndex = 1;
+            this.tb_t2_userCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t2_userCode.Location = new System.Drawing.Point(336, 400);
+            this.tb_t2_userCode.Name = "tb_t2_userCode";
+            this.tb_t2_userCode.Size = new System.Drawing.Size(280, 24);
+            this.tb_t2_userCode.TabIndex = 1;
+            this.tb_t2_userCode.TextChanged += new System.EventHandler(this.tb_t2_userCode_TextChanged);
             // 
             // label6
             // 
@@ -806,7 +823,7 @@
             this.tabPage2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_t2_photo)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -834,18 +851,18 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_t2_submit;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tb_t2_serviceID;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_t2_dateTo;
+        private System.Windows.Forms.PictureBox pb_t2_photo;
+        private System.Windows.Forms.Label lbl_t2_dateFrom;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label lbl_t2_surname;
+        private System.Windows.Forms.Label lbl_t2_name;
+        private System.Windows.Forms.TextBox tb_t2_userCode;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox textBox7;
@@ -870,19 +887,31 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox tB_korisnichki_kod;
+        private System.Windows.Forms.TextBox tb_activationCode;
         private System.Windows.Forms.Label L_korisnichki_kod;
         private System.Windows.Forms.Button button_upload_slika;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tb_t2_time;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private WindowsFormsApplication1._dp_gold_membershipDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.Button btn_printForm;
 
+
+
+        // getters
+
+
+        public string getName
+        {
+            get { return textBox1.Text; }
+        }
+
+        //
     }
 }
 

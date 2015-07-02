@@ -13,15 +13,15 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+        public static Int32 ID;
+
         public Form1()
         {
             InitializeComponent();
 
-          
-            dateTimePicker3.MaxDate = DateTime.Today.AddDays(1);
-            dateTimePicker3.Value = DateTime.Today;
-            
         }
+        
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -68,13 +68,30 @@ namespace WindowsFormsApplication1
             MemoryStream ms = new MemoryStream();
             pictureBox3.Image.Save(ms, ImageFormat.Jpeg);
             FunctionClass.Insert_User(textBox1.Text, textBox2.Text, textBox3.Text, ms.ToArray(), textBox4.Text, dateTimePicker1.Value, dateTimePicker2.Value);
+            
+            DataSet ds = FunctionClass.Select_User_By_ID(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, dateTimePicker1.Value);
+            //Int32 
+            ID = Int32.Parse(((DataRow) ds.Tables["Data"].Rows[0])["id"].ToString());
+
+            long activationCode = FunctionClass.ActivationCodeGenerator();
+            while (!FunctionClass.ValidateActivationCode(activationCode.ToString()))
+            {
+                activationCode = FunctionClass.ActivationCodeGenerator();
+            }
+            tb_activationCode.Text = activationCode.ToString();
+            FunctionClass.Insert_GoldCard(dateTimePicker2.Value, dateTimePicker2.Value.AddMonths(1), activationCode.ToString(), ID);
+
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
             pictureBox3.Image = null;
             textBox4.Text = "";
+            //tb_activationCode.Text = "";
             dateTimePicker1.Value = DateTime.Today;
             dateTimePicker2.Value = DateTime.Today;
+
+
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -108,7 +125,7 @@ namespace WindowsFormsApplication1
             string tB6 = dateTimePicker2.Text;
 
             string l7 = L_korisnichki_kod.Text;
-            string tB7 = tB_korisnichki_kod.Text;
+            string tB7 = tb_activationCode.Text;
 
             string l8 = label27.Text;
             //string tB8 = textBox4.Text;
@@ -150,10 +167,54 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            dateTimePicker3.MaxDate = DateTime.Today.AddDays(1);
+            dateTimePicker3.Value = DateTime.Today;
 
         }
 
+        private void btn_printForm_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            Print pr = new Print();
+            f1.Hide();
+            pr.setUserCode = ID.ToString();
+            pr.setName = textBox1.Text;
+            pr.setSurname = textBox2.Text;
+            pr.setMail = textBox3.Text;
+            pr.setPhone = textBox4.Text;
+            pr.setBirthdate = dateTimePicker1.Value.ToString("dd.MM.yyyy");
+            pr.setActivationCode = tb_activationCode.Text;
+            pr.Show();
+
+           
+        }
+
+     
+        private void tb_t2_userCode_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = FunctionClass.Select_GoldCard_By_UserID(Int32.Parse(tb_t2_userCode.Text));
+            if (ds.Tables["Data"].Rows.Count > 0)
+            {
+                lbl_t2_name.Text = ((DataRow)ds.Tables["Data"].Rows[0])["name"].ToString();
+                lbl_t2_surname.Text = ((DataRow)ds.Tables["Data"].Rows[0])["surname"].ToString();
+                lbl_t2_dateFrom.Text = ((DateTime)((DataRow)ds.Tables["Data"].Rows[0])["dateFrom"]).ToString("dd.MM.yyyy");
+                lbl_t2_dateTo.Text = ((DateTime)((DataRow)ds.Tables["Data"].Rows[0])["dateTo"]).ToString("dd.MM.yyyy");
+                var data = (Byte[])(((DataRow)ds.Tables["Data"].Rows[0])["photo"]);
+                var ms = new MemoryStream(data);
+                pb_t2_photo.Image = Image.FromStream(ms);
+                tb_t2_time.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+            }
+        }
+
+        private void btn_t2_submit_Click(object sender, EventArgs e)
+        {
+            FunctionClass.Insert_Activity(Convert.ToDateTime(tb_t2_time.Text), tb_t2_serviceID.Text, Int32.Parse(tb_t2_userCode.Text));
+            
+            
+            
+        }
+
+        
      
      
 
