@@ -32,3 +32,13 @@ C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\Window
 C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Tadii\Documents\Visual Studio 2013\Projects\dp-gold-m\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Print.resources
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Print.resources
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Ekaterina\Documents\Visual Studio 2012\Projects\_gold membership\membership\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache

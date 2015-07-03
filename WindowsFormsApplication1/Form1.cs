@@ -94,6 +94,7 @@ namespace WindowsFormsApplication1
             
         }
 
+    /* printanje - ketiiiiiiiiiiiiiiiiiiiiiii
         private void button7_Click(object sender, EventArgs e)
         {
 
@@ -164,6 +165,8 @@ namespace WindowsFormsApplication1
             g.DrawImage(pictureBox3.Image, x, y, 166, 200);
 
         }
+        */
+
 
         private void Form1_Load(object sender, EventArgs e)
         {

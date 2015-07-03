@@ -50,6 +50,8 @@
             this.lbl_skopje = new System.Windows.Forms.Label();
             this.lbl_signature = new System.Windows.Forms.Label();
             this.btn_print = new System.Windows.Forms.Button();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.pb_scbtLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_finkiLogo)).BeginInit();
             this.SuspendLayout();
@@ -273,6 +275,16 @@
             this.btn_print.TabIndex = 22;
             this.btn_print.Text = "Печати";
             this.btn_print.UseVisualStyleBackColor = true;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // Print
             // 
@@ -335,6 +347,8 @@
         private System.Windows.Forms.Label lbl_skopje;
         private System.Windows.Forms.Label lbl_signature;
         private System.Windows.Forms.Button btn_print;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
 
 
 
