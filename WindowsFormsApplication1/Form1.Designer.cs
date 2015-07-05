@@ -33,12 +33,10 @@
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_printForm = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button_upload_slika = new System.Windows.Forms.Button();
@@ -73,42 +71,53 @@
             this.tb_t2_userCode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label24 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.dgv_users = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.photo = new System.Windows.Forms.DataGridViewImageColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._dp_gold_membershipDataSet1 = new WindowsFormsApplication1._dp_gold_membershipDataSet1();
+            this.lbl_t3_search = new System.Windows.Forms.Label();
+            this.btn_t3_renew = new System.Windows.Forms.Button();
+            this.btn_t3_edit = new System.Windows.Forms.Button();
+            this.btn_t3_submit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_t3_dateFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtp_t3_birthdate = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.tb_t3_phone = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tb_t3_mail = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.tb_t3_surname = new System.Windows.Forms.TextBox();
+            this.tb_t3_name = new System.Windows.Forms.TextBox();
+            this.btn_t3_upload = new System.Windows.Forms.Button();
+            this.lbl_t3_dateTo = new System.Windows.Forms.Label();
+            this.pb_t3_photo = new System.Windows.Forms.PictureBox();
+            this.lbl_t3_dateFrom = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tb_t3_search = new System.Windows.Forms.TextBox();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.usersTableAdapter = new WindowsFormsApplication1._dp_gold_membershipDataSetTableAdapters.UsersTableAdapter();
+            this.usersTableAdapter1 = new WindowsFormsApplication1._dp_gold_membershipDataSet1TableAdapters.UsersTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t2_photo)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_users)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._dp_gold_membershipDataSet1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_t3_photo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -126,9 +135,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btn_printForm);
-            this.tabPage1.Controls.Add(this.pictureBox5);
-            this.tabPage1.Controls.Add(this.pictureBox4);
-            this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.label27);
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.button_upload_slika);
@@ -163,42 +169,9 @@
             this.btn_printForm.Name = "btn_printForm";
             this.btn_printForm.Size = new System.Drawing.Size(145, 30);
             this.btn_printForm.TabIndex = 21;
-            this.btn_printForm.Text = "Печати форма";
+            this.btn_printForm.Text = "Печати";
             this.btn_printForm.UseVisualStyleBackColor = true;
             this.btn_printForm.Click += new System.EventHandler(this.btn_printForm_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::WindowsFormsApplication1.Properties.Resources.Logo_FINKI_MK;
-            this.pictureBox5.Location = new System.Drawing.Point(6, 516);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(259, 74);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::WindowsFormsApplication1.Properties.Resources.logoscbt;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 369);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(191, 110);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(94, 613);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(145, 30);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "Печати";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
             // 
             // label27
             // 
@@ -537,12 +510,13 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label24);
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.button4);
+            this.tabPage3.Controls.Add(this.dgv_users);
+            this.tabPage3.Controls.Add(this.lbl_t3_search);
+            this.tabPage3.Controls.Add(this.btn_t3_renew);
+            this.tabPage3.Controls.Add(this.btn_t3_edit);
+            this.tabPage3.Controls.Add(this.btn_t3_submit);
             this.tabPage3.Controls.Add(this.panel2);
-            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.tb_t3_search);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -551,63 +525,160 @@
             this.tabPage3.Text = "Преглед на корисници";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label24
+            // dgv_users
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(21, 20);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(107, 18);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "Пребарување:";
+            this.dgv_users.AllowUserToAddRows = false;
+            this.dgv_users.AllowUserToDeleteRows = false;
+            this.dgv_users.AllowUserToResizeColumns = false;
+            this.dgv_users.AllowUserToResizeRows = false;
+            this.dgv_users.AutoGenerateColumns = false;
+            this.dgv_users.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_users.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgv_users.ColumnHeadersHeight = 30;
+            this.dgv_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.surnameDataGridViewTextBoxColumn,
+            this.mail,
+            this.photo,
+            this.phone,
+            this.dateOfBirth});
+            this.dgv_users.DataSource = this.usersBindingSource;
+            this.dgv_users.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgv_users.Location = new System.Drawing.Point(21, 71);
+            this.dgv_users.MultiSelect = false;
+            this.dgv_users.Name = "dgv_users";
+            this.dgv_users.ReadOnly = true;
+            this.dgv_users.RowHeadersVisible = false;
+            this.dgv_users.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dgv_users.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_users.Size = new System.Drawing.Size(632, 201);
+            this.dgv_users.TabIndex = 8;
+            this.dgv_users.SelectionChanged += new System.EventHandler(this.dgv_users_SelectionChanged);
             // 
-            // button6
+            // idDataGridViewTextBoxColumn
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(357, 278);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(145, 30);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Обнови картичка";
-            this.button6.UseVisualStyleBackColor = true;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Кориснички код";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // button5
+            // nameDataGridViewTextBoxColumn
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(508, 278);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(145, 30);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Промени податоци";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Име";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // button4
+            // surnameDataGridViewTextBoxColumn
             // 
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(508, 622);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 30);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Зачувај";
-            this.button4.UseVisualStyleBackColor = true;
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Презиме";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mail
+            // 
+            this.mail.DataPropertyName = "mail";
+            this.mail.HeaderText = "mail";
+            this.mail.Name = "mail";
+            this.mail.ReadOnly = true;
+            this.mail.Visible = false;
+            // 
+            // photo
+            // 
+            this.photo.DataPropertyName = "photo";
+            this.photo.HeaderText = "photo";
+            this.photo.Name = "photo";
+            this.photo.ReadOnly = true;
+            this.photo.Visible = false;
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "phone";
+            this.phone.HeaderText = "phone";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            this.phone.Visible = false;
+            // 
+            // dateOfBirth
+            // 
+            this.dateOfBirth.DataPropertyName = "dateOfBirth";
+            this.dateOfBirth.HeaderText = "dateOfBirth";
+            this.dateOfBirth.Name = "dateOfBirth";
+            this.dateOfBirth.ReadOnly = true;
+            this.dateOfBirth.Visible = false;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this._dp_gold_membershipDataSet1;
+            // 
+            // _dp_gold_membershipDataSet1
+            // 
+            this._dp_gold_membershipDataSet1.DataSetName = "_dp_gold_membershipDataSet1";
+            this._dp_gold_membershipDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lbl_t3_search
+            // 
+            this.lbl_t3_search.AutoSize = true;
+            this.lbl_t3_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t3_search.Location = new System.Drawing.Point(21, 20);
+            this.lbl_t3_search.Name = "lbl_t3_search";
+            this.lbl_t3_search.Size = new System.Drawing.Size(107, 18);
+            this.lbl_t3_search.TabIndex = 7;
+            this.lbl_t3_search.Text = "Пребарување:";
+            // 
+            // btn_t3_renew
+            // 
+            this.btn_t3_renew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t3_renew.Location = new System.Drawing.Point(357, 278);
+            this.btn_t3_renew.Name = "btn_t3_renew";
+            this.btn_t3_renew.Size = new System.Drawing.Size(145, 30);
+            this.btn_t3_renew.TabIndex = 6;
+            this.btn_t3_renew.Text = "Обнови картичка";
+            this.btn_t3_renew.UseVisualStyleBackColor = true;
+            this.btn_t3_renew.Click += new System.EventHandler(this.btn_t3_renew_Click);
+            // 
+            // btn_t3_edit
+            // 
+            this.btn_t3_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t3_edit.Location = new System.Drawing.Point(508, 278);
+            this.btn_t3_edit.Name = "btn_t3_edit";
+            this.btn_t3_edit.Size = new System.Drawing.Size(145, 30);
+            this.btn_t3_edit.TabIndex = 5;
+            this.btn_t3_edit.Text = "Промени податоци";
+            this.btn_t3_edit.UseVisualStyleBackColor = true;
+            this.btn_t3_edit.Click += new System.EventHandler(this.btn_t3_edit_Click);
+            // 
+            // btn_t3_submit
+            // 
+            this.btn_t3_submit.Enabled = false;
+            this.btn_t3_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t3_submit.Location = new System.Drawing.Point(508, 622);
+            this.btn_t3_submit.Name = "btn_t3_submit";
+            this.btn_t3_submit.Size = new System.Drawing.Size(145, 30);
+            this.btn_t3_submit.TabIndex = 4;
+            this.btn_t3_submit.Text = "Зачувај";
+            this.btn_t3_submit.UseVisualStyleBackColor = true;
+            this.btn_t3_submit.Click += new System.EventHandler(this.btn_t3_submit_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dateTimePicker4);
-            this.panel2.Controls.Add(this.dateTimePicker3);
+            this.panel2.Controls.Add(this.dtp_t3_dateFrom);
+            this.panel2.Controls.Add(this.dtp_t3_birthdate);
             this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.textBox11);
+            this.panel2.Controls.Add(this.tb_t3_phone);
             this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.textBox10);
+            this.panel2.Controls.Add(this.tb_t3_mail);
             this.panel2.Controls.Add(this.label21);
-            this.panel2.Controls.Add(this.textBox9);
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.tb_t3_surname);
+            this.panel2.Controls.Add(this.tb_t3_name);
+            this.panel2.Controls.Add(this.btn_t3_upload);
+            this.panel2.Controls.Add(this.lbl_t3_dateTo);
+            this.panel2.Controls.Add(this.pb_t3_photo);
+            this.panel2.Controls.Add(this.lbl_t3_dateFrom);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label20);
@@ -616,33 +687,34 @@
             this.panel2.Size = new System.Drawing.Size(632, 302);
             this.panel2.TabIndex = 3;
             // 
-            // dateTimePicker4
+            // dtp_t3_dateFrom
             // 
-            this.dateTimePicker4.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker4.Enabled = false;
-            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(197, 229);
-            this.dateTimePicker4.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(211, 24);
-            this.dateTimePicker4.TabIndex = 15;
-            this.dateTimePicker4.Value = new System.DateTime(2015, 6, 27, 0, 0, 0, 0);
-            this.dateTimePicker4.Visible = false;
+            this.dtp_t3_dateFrom.CustomFormat = "dd-MM-yyyy";
+            this.dtp_t3_dateFrom.Enabled = false;
+            this.dtp_t3_dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_t3_dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_t3_dateFrom.Location = new System.Drawing.Point(197, 229);
+            this.dtp_t3_dateFrom.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.dtp_t3_dateFrom.Name = "dtp_t3_dateFrom";
+            this.dtp_t3_dateFrom.Size = new System.Drawing.Size(211, 24);
+            this.dtp_t3_dateFrom.TabIndex = 15;
+            this.dtp_t3_dateFrom.Value = new System.DateTime(2015, 6, 27, 0, 0, 0, 0);
+            this.dtp_t3_dateFrom.Visible = false;
+            this.dtp_t3_dateFrom.ValueChanged += new System.EventHandler(this.dtp_t3_dateFrom_ValueChanged);
             // 
-            // dateTimePicker3
+            // dtp_t3_birthdate
             // 
-            this.dateTimePicker3.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker3.Enabled = false;
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(197, 185);
-            this.dateTimePicker3.MaxDate = new System.DateTime(2015, 6, 30, 0, 0, 0, 0);
-            this.dateTimePicker3.MinDate = new System.DateTime(1915, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(211, 24);
-            this.dateTimePicker3.TabIndex = 14;
-            this.dateTimePicker3.Value = new System.DateTime(2015, 6, 27, 0, 0, 0, 0);
+            this.dtp_t3_birthdate.CustomFormat = "dd-MM-yyyy";
+            this.dtp_t3_birthdate.Enabled = false;
+            this.dtp_t3_birthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_t3_birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_t3_birthdate.Location = new System.Drawing.Point(197, 185);
+            this.dtp_t3_birthdate.MaxDate = new System.DateTime(2015, 6, 30, 0, 0, 0, 0);
+            this.dtp_t3_birthdate.MinDate = new System.DateTime(1915, 1, 1, 0, 0, 0, 0);
+            this.dtp_t3_birthdate.Name = "dtp_t3_birthdate";
+            this.dtp_t3_birthdate.Size = new System.Drawing.Size(211, 24);
+            this.dtp_t3_birthdate.TabIndex = 14;
+            this.dtp_t3_birthdate.Value = new System.DateTime(2015, 6, 27, 0, 0, 0, 0);
             // 
             // label23
             // 
@@ -654,14 +726,14 @@
             this.label23.TabIndex = 13;
             this.label23.Text = "Дата на раѓање:";
             // 
-            // textBox11
+            // tb_t3_phone
             // 
-            this.textBox11.Enabled = false;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(197, 144);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(211, 24);
-            this.textBox11.TabIndex = 12;
+            this.tb_t3_phone.Enabled = false;
+            this.tb_t3_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t3_phone.Location = new System.Drawing.Point(197, 144);
+            this.tb_t3_phone.Name = "tb_t3_phone";
+            this.tb_t3_phone.Size = new System.Drawing.Size(211, 24);
+            this.tb_t3_phone.TabIndex = 12;
             // 
             // label22
             // 
@@ -673,14 +745,14 @@
             this.label22.TabIndex = 11;
             this.label22.Text = "Телефон:";
             // 
-            // textBox10
+            // tb_t3_mail
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(197, 103);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(211, 24);
-            this.textBox10.TabIndex = 10;
+            this.tb_t3_mail.Enabled = false;
+            this.tb_t3_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t3_mail.Location = new System.Drawing.Point(197, 103);
+            this.tb_t3_mail.Name = "tb_t3_mail";
+            this.tb_t3_mail.Size = new System.Drawing.Size(211, 24);
+            this.tb_t3_mail.TabIndex = 10;
             // 
             // label21
             // 
@@ -688,70 +760,69 @@
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(11, 110);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(52, 18);
+            this.label21.Size = new System.Drawing.Size(54, 18);
             this.label21.TabIndex = 9;
-            this.label21.Text = "e-mail:";
+            this.label21.Text = "E-mail:";
             // 
-            // textBox9
+            // tb_t3_surname
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(197, 66);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(211, 24);
-            this.textBox9.TabIndex = 8;
+            this.tb_t3_surname.Enabled = false;
+            this.tb_t3_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t3_surname.Location = new System.Drawing.Point(197, 66);
+            this.tb_t3_surname.Name = "tb_t3_surname";
+            this.tb_t3_surname.Size = new System.Drawing.Size(211, 24);
+            this.tb_t3_surname.TabIndex = 8;
             // 
-            // textBox8
+            // tb_t3_name
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(197, 28);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(211, 24);
-            this.textBox8.TabIndex = 7;
-            this.textBox8.Text = "Keti";
+            this.tb_t3_name.Enabled = false;
+            this.tb_t3_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t3_name.Location = new System.Drawing.Point(197, 28);
+            this.tb_t3_name.Name = "tb_t3_name";
+            this.tb_t3_name.Size = new System.Drawing.Size(211, 24);
+            this.tb_t3_name.TabIndex = 7;
             // 
-            // button3
+            // btn_t3_upload
             // 
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(487, 238);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 30);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Додади слика";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_t3_upload.Enabled = false;
+            this.btn_t3_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t3_upload.Location = new System.Drawing.Point(487, 238);
+            this.btn_t3_upload.Name = "btn_t3_upload";
+            this.btn_t3_upload.Size = new System.Drawing.Size(145, 30);
+            this.btn_t3_upload.TabIndex = 6;
+            this.btn_t3_upload.Text = "Додади слика";
+            this.btn_t3_upload.UseVisualStyleBackColor = true;
+            this.btn_t3_upload.Click += new System.EventHandler(this.btn_t3_upload_Click);
             // 
-            // label16
+            // lbl_t3_dateTo
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(194, 262);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 18);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "// дата до";
+            this.lbl_t3_dateTo.AutoSize = true;
+            this.lbl_t3_dateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t3_dateTo.Location = new System.Drawing.Point(194, 262);
+            this.lbl_t3_dateTo.Name = "lbl_t3_dateTo";
+            this.lbl_t3_dateTo.Size = new System.Drawing.Size(74, 18);
+            this.lbl_t3_dateTo.TabIndex = 5;
+            this.lbl_t3_dateTo.Text = "// дата до";
             // 
-            // pictureBox2
+            // pb_t3_photo
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(441, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(188, 198);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.pb_t3_photo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_t3_photo.Location = new System.Drawing.Point(441, 28);
+            this.pb_t3_photo.Name = "pb_t3_photo";
+            this.pb_t3_photo.Size = new System.Drawing.Size(188, 198);
+            this.pb_t3_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_t3_photo.TabIndex = 4;
+            this.pb_t3_photo.TabStop = false;
             // 
-            // label17
+            // lbl_t3_dateFrom
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(194, 229);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(74, 18);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "// дата од";
+            this.lbl_t3_dateFrom.AutoSize = true;
+            this.lbl_t3_dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t3_dateFrom.Location = new System.Drawing.Point(194, 229);
+            this.lbl_t3_dateFrom.Name = "lbl_t3_dateFrom";
+            this.lbl_t3_dateFrom.Size = new System.Drawing.Size(74, 18);
+            this.lbl_t3_dateFrom.TabIndex = 3;
+            this.lbl_t3_dateFrom.Text = "// дата од";
             // 
             // label18
             // 
@@ -783,22 +854,23 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Име:";
             // 
-            // textBox7
+            // tb_t3_search
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(21, 41);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(632, 24);
-            this.textBox7.TabIndex = 1;
+            this.tb_t3_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t3_search.Location = new System.Drawing.Point(21, 41);
+            this.tb_t3_search.Name = "tb_t3_search";
+            this.tb_t3_search.Size = new System.Drawing.Size(632, 24);
+            this.tb_t3_search.TabIndex = 1;
+            this.tb_t3_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_t3_search_KeyUp);
             // 
             // printDialog1
             // 
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
             // 
-            // usersTableAdapter
+            // usersTableAdapter1
             // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.usersTableAdapter1.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -807,13 +879,11 @@
             this.ClientSize = new System.Drawing.Size(686, 687);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Спортски Центар „Борис Трајковски“";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -822,9 +892,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_t2_photo)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_users)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._dp_gold_membershipDataSet1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_t3_photo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -861,41 +934,48 @@
         private System.Windows.Forms.TextBox tb_t2_userCode;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox tb_t3_search;
+        private System.Windows.Forms.Button btn_t3_submit;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btn_t3_upload;
+        private System.Windows.Forms.Label lbl_t3_dateTo;
+        private System.Windows.Forms.PictureBox pb_t3_photo;
+        private System.Windows.Forms.Label lbl_t3_dateFrom;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button btn_t3_renew;
+        private System.Windows.Forms.Button btn_t3_edit;
+        private System.Windows.Forms.TextBox tb_t3_mail;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tb_t3_surname;
+        private System.Windows.Forms.TextBox tb_t3_name;
+        private System.Windows.Forms.TextBox tb_t3_phone;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DateTimePicker dtp_t3_birthdate;
+        private System.Windows.Forms.DateTimePicker dtp_t3_dateFrom;
+        private System.Windows.Forms.Label lbl_t3_search;
         private System.Windows.Forms.TextBox tb_activationCode;
         private System.Windows.Forms.Label L_korisnichki_kod;
         private System.Windows.Forms.Button button_upload_slika;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox tb_t2_time;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private WindowsFormsApplication1._dp_gold_membershipDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.Button btn_printForm;
+        private System.Windows.Forms.DataGridView dgv_users;
+        private _dp_gold_membershipDataSet1 _dp_gold_membershipDataSet1;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private _dp_gold_membershipDataSet1TableAdapters.UsersTableAdapter usersTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mail;
+        private System.Windows.Forms.DataGridViewImageColumn photo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirth;
 
 
 

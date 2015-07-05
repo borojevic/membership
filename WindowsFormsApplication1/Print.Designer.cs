@@ -240,7 +240,7 @@
             // 
             this.lbl_issuer.AutoSize = true;
             this.lbl_issuer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_issuer.Location = new System.Drawing.Point(374, 508);
+            this.lbl_issuer.Location = new System.Drawing.Point(413, 508);
             this.lbl_issuer.Name = "lbl_issuer";
             this.lbl_issuer.Size = new System.Drawing.Size(64, 18);
             this.lbl_issuer.TabIndex = 19;
@@ -260,7 +260,7 @@
             // 
             this.lbl_signature.AutoSize = true;
             this.lbl_signature.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_signature.Location = new System.Drawing.Point(357, 542);
+            this.lbl_signature.Location = new System.Drawing.Point(396, 542);
             this.lbl_signature.Name = "lbl_signature";
             this.lbl_signature.Size = new System.Drawing.Size(104, 18);
             this.lbl_signature.TabIndex = 21;
@@ -314,7 +314,7 @@
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_title);
             this.Name = "Print";
-            this.Text = "Print";
+            this.Text = "Членство";
             this.Load += new System.EventHandler(this.Print_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_scbtLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_finkiLogo)).EndInit();
