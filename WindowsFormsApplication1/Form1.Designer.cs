@@ -38,22 +38,22 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_printForm = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pb_t1_photo = new System.Windows.Forms.PictureBox();
             this.button_upload_slika = new System.Windows.Forms.Button();
-            this.tb_activationCode = new System.Windows.Forms.TextBox();
+            this.tb_t1_activationCode = new System.Windows.Forms.TextBox();
             this.L_korisnichki_kod = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_t1_dateFrom = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_t1_phone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_t1_mail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_t1_surname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_t1_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tb_t2_time = new System.Windows.Forms.TextBox();
@@ -106,9 +106,20 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.usersTableAdapter1 = new WindowsFormsApplication1._dp_gold_membershipDataSet1TableAdapters.UsersTableAdapter();
+            this.activitiesTableAdapter1 = new WindowsFormsApplication1._dp_gold_membershipDataSetTableAdapters.ActivitiesTableAdapter();
+            this.ep_t1_mail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t1_name = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t1_surname = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t1_phone = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t1_activationCode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t1_photo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t1_birthdate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t1_datefrom = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btn_t1_refresh = new System.Windows.Forms.Button();
+            this.ep_t2_usercode = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_t1_photo)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t2_photo)).BeginInit();
@@ -118,6 +129,15 @@
             ((System.ComponentModel.ISupportInitialize)(this._dp_gold_membershipDataSet1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t3_photo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_mail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_name)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_surname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_phone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_activationCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_photo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_birthdate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_datefrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t2_usercode)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -134,24 +154,25 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_t1_refresh);
             this.tabPage1.Controls.Add(this.btn_printForm);
             this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.pictureBox3);
+            this.tabPage1.Controls.Add(this.pb_t1_photo);
             this.tabPage1.Controls.Add(this.button_upload_slika);
-            this.tabPage1.Controls.Add(this.tb_activationCode);
+            this.tabPage1.Controls.Add(this.tb_t1_activationCode);
             this.tabPage1.Controls.Add(this.L_korisnichki_kod);
-            this.tabPage1.Controls.Add(this.dateTimePicker2);
+            this.tabPage1.Controls.Add(this.dtp_t1_dateFrom);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.tb_t1_phone);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.tb_t1_mail);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.tb_t1_surname);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.tb_t1_name);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -164,6 +185,8 @@
             // 
             // btn_printForm
             // 
+            this.btn_printForm.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_printForm.Enabled = false;
             this.btn_printForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_printForm.Location = new System.Drawing.Point(271, 613);
             this.btn_printForm.Name = "btn_printForm";
@@ -183,15 +206,19 @@
             this.label27.TabIndex = 17;
             this.label27.Text = "Слика:";
             // 
-            // pictureBox3
+            // pb_t1_photo
             // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(308, 348);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(277, 180);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
+            this.pb_t1_photo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_t1_photo.Image = global::WindowsFormsApplication1.Properties.Resources.slika;
+            this.pb_t1_photo.InitialImage = global::WindowsFormsApplication1.Properties.Resources.slika;
+            this.pb_t1_photo.Location = new System.Drawing.Point(308, 348);
+            this.pb_t1_photo.Name = "pb_t1_photo";
+            this.pb_t1_photo.Size = new System.Drawing.Size(277, 180);
+            this.pb_t1_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_t1_photo.TabIndex = 16;
+            this.pb_t1_photo.TabStop = false;
+            this.pb_t1_photo.Validating += new System.ComponentModel.CancelEventHandler(this.pb_t1_photo_Validating);
+            this.pb_t1_photo.Validated += new System.EventHandler(this.pb_t1_photo_Validated);
             // 
             // button_upload_slika
             // 
@@ -204,13 +231,17 @@
             this.button_upload_slika.UseVisualStyleBackColor = true;
             this.button_upload_slika.Click += new System.EventHandler(this.button_upload_slika_Click);
             // 
-            // tb_activationCode
+            // tb_t1_activationCode
             // 
-            this.tb_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_activationCode.Location = new System.Drawing.Point(308, 295);
-            this.tb_activationCode.Name = "tb_activationCode";
-            this.tb_activationCode.Size = new System.Drawing.Size(277, 24);
-            this.tb_activationCode.TabIndex = 14;
+            this.tb_t1_activationCode.Enabled = false;
+            this.tb_t1_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t1_activationCode.Location = new System.Drawing.Point(308, 295);
+            this.tb_t1_activationCode.Name = "tb_t1_activationCode";
+            this.tb_t1_activationCode.ReadOnly = true;
+            this.tb_t1_activationCode.Size = new System.Drawing.Size(277, 24);
+            this.tb_t1_activationCode.TabIndex = 14;
+            this.tb_t1_activationCode.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t1_activationCode_Validating);
+            this.tb_t1_activationCode.Validated += new System.EventHandler(this.tb_t1_activationCode_Validated);
             // 
             // L_korisnichki_kod
             // 
@@ -218,20 +249,21 @@
             this.L_korisnichki_kod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_korisnichki_kod.Location = new System.Drawing.Point(90, 295);
             this.L_korisnichki_kod.Name = "L_korisnichki_kod";
-            this.L_korisnichki_kod.Size = new System.Drawing.Size(125, 18);
+            this.L_korisnichki_kod.Size = new System.Drawing.Size(130, 18);
             this.L_korisnichki_kod.TabIndex = 13;
-            this.L_korisnichki_kod.Text = "Кориснички код:";
+            this.L_korisnichki_kod.Text = "Активациски код:";
             // 
-            // dateTimePicker2
+            // dtp_t1_dateFrom
             // 
-            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(308, 250);
-            this.dateTimePicker2.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(277, 24);
-            this.dateTimePicker2.TabIndex = 12;
+            this.dtp_t1_dateFrom.CustomFormat = "dd-MM-yyyy";
+            this.dtp_t1_dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_t1_dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_t1_dateFrom.Location = new System.Drawing.Point(308, 250);
+            this.dtp_t1_dateFrom.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.dtp_t1_dateFrom.Name = "dtp_t1_dateFrom";
+            this.dtp_t1_dateFrom.Size = new System.Drawing.Size(277, 24);
+            this.dtp_t1_dateFrom.TabIndex = 12;
+            this.dtp_t1_dateFrom.ValueChanged += new System.EventHandler(this.dtp_t1_dateFrom_ValueChanged);
             // 
             // label14
             // 
@@ -245,6 +277,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(440, 613);
             this.button1.Name = "button1";
@@ -252,6 +285,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Внеси корисник";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.EnabledChanged += new System.EventHandler(this.button1_EnabledChanged);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker1
@@ -263,6 +297,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(277, 24);
             this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label5
             // 
@@ -274,13 +309,15 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Дата на раѓање:";
             // 
-            // textBox4
+            // tb_t1_phone
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(308, 162);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(277, 24);
-            this.textBox4.TabIndex = 7;
+            this.tb_t1_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t1_phone.Location = new System.Drawing.Point(308, 162);
+            this.tb_t1_phone.Name = "tb_t1_phone";
+            this.tb_t1_phone.Size = new System.Drawing.Size(277, 24);
+            this.tb_t1_phone.TabIndex = 7;
+            this.tb_t1_phone.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t1_phone_Validating);
+            this.tb_t1_phone.Validated += new System.EventHandler(this.tb_t1_phone_Validated);
             // 
             // label4
             // 
@@ -292,13 +329,15 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Телефон:";
             // 
-            // textBox3
+            // tb_t1_mail
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(308, 120);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(277, 24);
-            this.textBox3.TabIndex = 5;
+            this.tb_t1_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t1_mail.Location = new System.Drawing.Point(308, 120);
+            this.tb_t1_mail.Name = "tb_t1_mail";
+            this.tb_t1_mail.Size = new System.Drawing.Size(277, 24);
+            this.tb_t1_mail.TabIndex = 5;
+            this.tb_t1_mail.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t1_mail_Validating);
+            this.tb_t1_mail.Validated += new System.EventHandler(this.tb_t1_mail_Validated);
             // 
             // label3
             // 
@@ -310,13 +349,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Е-mail:";
             // 
-            // textBox2
+            // tb_t1_surname
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(308, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(277, 24);
-            this.textBox2.TabIndex = 3;
+            this.tb_t1_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t1_surname.Location = new System.Drawing.Point(308, 77);
+            this.tb_t1_surname.Name = "tb_t1_surname";
+            this.tb_t1_surname.Size = new System.Drawing.Size(277, 24);
+            this.tb_t1_surname.TabIndex = 3;
+            this.tb_t1_surname.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t1_surname_Validating);
+            this.tb_t1_surname.Validated += new System.EventHandler(this.tb_t1_surname_Validated);
             // 
             // label2
             // 
@@ -328,13 +369,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Презиме:";
             // 
-            // textBox1
+            // tb_t1_name
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(308, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 24);
-            this.textBox1.TabIndex = 1;
+            this.tb_t1_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t1_name.Location = new System.Drawing.Point(308, 30);
+            this.tb_t1_name.Name = "tb_t1_name";
+            this.tb_t1_name.Size = new System.Drawing.Size(277, 24);
+            this.tb_t1_name.TabIndex = 1;
+            this.tb_t1_name.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t1_name_Validating);
+            this.tb_t1_name.Validated += new System.EventHandler(this.tb_t1_name_Validated);
             // 
             // label1
             // 
@@ -442,6 +485,8 @@
             // 
             this.pb_t2_photo.BackColor = System.Drawing.Color.White;
             this.pb_t2_photo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_t2_photo.Image = global::WindowsFormsApplication1.Properties.Resources.slika;
+            this.pb_t2_photo.InitialImage = global::WindowsFormsApplication1.Properties.Resources.slika;
             this.pb_t2_photo.Location = new System.Drawing.Point(387, 24);
             this.pb_t2_photo.Name = "pb_t2_photo";
             this.pb_t2_photo.Size = new System.Drawing.Size(190, 232);
@@ -497,6 +542,7 @@
             this.tb_t2_userCode.Size = new System.Drawing.Size(280, 24);
             this.tb_t2_userCode.TabIndex = 1;
             this.tb_t2_userCode.TextChanged += new System.EventHandler(this.tb_t2_userCode_TextChanged);
+            this.tb_t2_userCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t2_userCode_KeyPress);
             // 
             // label6
             // 
@@ -872,10 +918,72 @@
             // 
             this.usersTableAdapter1.ClearBeforeFill = true;
             // 
+            // activitiesTableAdapter1
+            // 
+            this.activitiesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ep_t1_mail
+            // 
+            this.ep_t1_mail.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t1_mail.ContainerControl = this;
+            // 
+            // ep_t1_name
+            // 
+            this.ep_t1_name.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t1_name.ContainerControl = this;
+            // 
+            // ep_t1_surname
+            // 
+            this.ep_t1_surname.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t1_surname.ContainerControl = this;
+            // 
+            // ep_t1_phone
+            // 
+            this.ep_t1_phone.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t1_phone.ContainerControl = this;
+            // 
+            // ep_t1_activationCode
+            // 
+            this.ep_t1_activationCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t1_activationCode.ContainerControl = this;
+            // 
+            // ep_t1_photo
+            // 
+            this.ep_t1_photo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t1_photo.ContainerControl = this;
+            // 
+            // ep_t1_birthdate
+            // 
+            this.ep_t1_birthdate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t1_birthdate.ContainerControl = this;
+            // 
+            // ep_t1_datefrom
+            // 
+            this.ep_t1_datefrom.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t1_datefrom.ContainerControl = this;
+            // 
+            // btn_t1_refresh
+            // 
+            this.btn_t1_refresh.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_t1_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t1_refresh.Location = new System.Drawing.Point(94, 613);
+            this.btn_t1_refresh.Name = "btn_t1_refresh";
+            this.btn_t1_refresh.Size = new System.Drawing.Size(145, 30);
+            this.btn_t1_refresh.TabIndex = 22;
+            this.btn_t1_refresh.Text = "Освежи";
+            this.btn_t1_refresh.UseVisualStyleBackColor = true;
+            this.btn_t1_refresh.Click += new System.EventHandler(this.btn_t1_refresh_Click);
+            // 
+            // ep_t2_usercode
+            // 
+            this.ep_t2_usercode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t2_usercode.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(686, 687);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
@@ -884,7 +992,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_t1_photo)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -898,6 +1006,15 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t3_photo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_mail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_name)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_surname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_phone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_activationCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_photo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_birthdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t1_datefrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t2_usercode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -909,15 +1026,15 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_t1_phone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_t1_mail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_t1_surname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_t1_name;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtp_t1_dateFrom;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btn_t2_submit;
@@ -956,11 +1073,11 @@
         private System.Windows.Forms.DateTimePicker dtp_t3_birthdate;
         private System.Windows.Forms.DateTimePicker dtp_t3_dateFrom;
         private System.Windows.Forms.Label lbl_t3_search;
-        private System.Windows.Forms.TextBox tb_activationCode;
+        private System.Windows.Forms.TextBox tb_t1_activationCode;
         private System.Windows.Forms.Label L_korisnichki_kod;
         private System.Windows.Forms.Button button_upload_slika;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pb_t1_photo;
         private System.Windows.Forms.TextBox tb_t2_time;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
@@ -976,6 +1093,17 @@
         private System.Windows.Forms.DataGridViewImageColumn photo;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirth;
+        private _dp_gold_membershipDataSetTableAdapters.ActivitiesTableAdapter activitiesTableAdapter1;
+        private System.Windows.Forms.ErrorProvider ep_t1_mail;
+        private System.Windows.Forms.ErrorProvider ep_t1_name;
+        private System.Windows.Forms.ErrorProvider ep_t1_surname;
+        private System.Windows.Forms.ErrorProvider ep_t1_phone;
+        private System.Windows.Forms.ErrorProvider ep_t1_activationCode;
+        private System.Windows.Forms.ErrorProvider ep_t1_photo;
+        private System.Windows.Forms.ErrorProvider ep_t1_birthdate;
+        private System.Windows.Forms.ErrorProvider ep_t1_datefrom;
+        private System.Windows.Forms.Button btn_t1_refresh;
+        private System.Windows.Forms.ErrorProvider ep_t2_usercode;
 
 
 
@@ -984,7 +1112,7 @@
 
         public string getName
         {
-            get { return textBox1.Text; }
+            get { return tb_t1_name.Text; }
         }
 
         //

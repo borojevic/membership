@@ -315,6 +315,7 @@
             this.Controls.Add(this.lbl_title);
             this.Name = "Print";
             this.Text = "Членство";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Print_FormClosed);
             this.Load += new System.EventHandler(this.Print_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_scbtLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_finkiLogo)).EndInit();

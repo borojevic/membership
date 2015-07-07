@@ -109,6 +109,17 @@ namespace WindowsFormsApplication1
             
         }
 
+        private void Print_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Form1 f1 = new Form1();
+            //Print pr = new Print();
+           // pr.Hide();
+            
+//            f1.Show();
+
+            Application.Restart();
+        }
+
 
     }
 }

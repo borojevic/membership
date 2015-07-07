@@ -6,6 +6,9 @@ using System.Text;
 using System.Configuration;
 using System.Data;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace WindowsFormsApplication1
 {
@@ -32,8 +35,20 @@ namespace WindowsFormsApplication1
 
 
 
-        //
-        // custom functions
+       
+// custom functions
+        public static Boolean SameAs(Image img1, Image img2)
+        {
+            MemoryStream ms1 = new MemoryStream(), ms2 = new MemoryStream();
+            img1.Save(ms1, ImageFormat.Jpeg);
+            img2.Save(ms2, ImageFormat.Jpeg);
+            byte[] img1Bytes = ms1.ToArray(), img2Bytes = ms2.ToArray();
+            var image164 = Convert.ToBase64String(img1Bytes);
+            var image264 = Convert.ToBase64String(img2Bytes);
+
+            return string.Equals(image164, image264);;
+        }
+
         public static long ActivationCodeGenerator()
         {
             Random r = new Random();
@@ -44,7 +59,6 @@ namespace WindowsFormsApplication1
             return ((long)number2 * (long)1000000000) + (long)number;
         }
 
-
         public static Boolean ValidateActivationCode(String activationCode) 
         {
             DataSet ds = FunctionClass.Select_By_ActivationCode(activationCode);
@@ -52,9 +66,77 @@ namespace WindowsFormsApplication1
                 return true;
             return false;
         }
-        //
 
+        public static bool ValidateEmailAddress(string emailAddress, out string errorMessage)
+        {
+            // Confirm that the e-mail address string is not empty. 
+            if (emailAddress.Length == 0)
+            {
+                errorMessage = "This field is required.";
+                return false;
+            }
 
+            // Confirm that there is an "@" and a "." in the e-mail address, and in the correct order.
+            if (emailAddress.IndexOf("@") > -1)
+            {
+                if (emailAddress.IndexOf(".", emailAddress.IndexOf("@")) > emailAddress.IndexOf("@"))
+                {
+                    errorMessage = "";
+                    return true;
+                }
+            }
+
+            errorMessage = "Must be a valid e-mail address format.\n" +
+               "For example 'someone@example.com' ";
+            return false;
+        }
+
+        public static bool ValidateString(string str, out string errorMessage)
+        {
+            // Confirm that string is not empty. 
+            if (str.Length == 0)
+            {
+                errorMessage = "This field is required.";
+                return false;
+            }
+
+            if (!Regex.IsMatch(str, @"^[a-zA-Z]+$"))
+            {
+                errorMessage = "Only letters allowed.";
+                return false;
+            }
+            errorMessage = "";
+            return true;
+        }
+
+        public static bool ValidateNumber(string str, out string errorMessage)
+        {
+            // Confirm that string is not empty. 
+            if (str.Length == 0)
+            {
+                errorMessage = "This field is required.";
+                return false;
+            } 
+            
+            if (!Regex.IsMatch(str, @"^[0-9]+$"))
+            {
+                errorMessage = "Only numbers allowed.";
+                return false;
+            }
+            errorMessage = "";
+            return true;
+        }
+
+        public static bool ValidateImage(Image img, Image initial, out string errorMessage)
+        {
+            if(img == initial)
+            {
+                errorMessage = "You must upload a photo.";
+                return false;
+            }
+            errorMessage = "";
+            return true;
+        }
 
 //       insert_user
 
@@ -100,8 +182,6 @@ namespace WindowsFormsApplication1
 
 
 //       insert_gold_card
-
-
         public static void Insert_GoldCard(DateTime dateFrom, DateTime dateTo, String activationCode, Int32 userId)
         {
             SqlCommand cmd = new SqlCommand();
@@ -129,8 +209,8 @@ namespace WindowsFormsApplication1
                     con.Close();
             }
         }
-//       select_user_by_id     
 
+//       select_user_by_id     
         public static DataSet Select_User_By_ID(String name, String surname, String mail, String phone, DateTime dateOfBirth)
         {
             SqlCommand cmd = new SqlCommand();
@@ -152,7 +232,6 @@ namespace WindowsFormsApplication1
         }
 
 //       select_by_activationCode
-
         public static DataSet Select_By_ActivationCode(String activationCode)
         {
             SqlCommand cmd = new SqlCommand();
@@ -171,7 +250,6 @@ namespace WindowsFormsApplication1
 
 
 //      select_goldCard_by_userId
-
         public static DataSet Select_GoldCard_By_UserID(Int32 id)
         {
             SqlCommand cmd = new SqlCommand();
@@ -189,7 +267,6 @@ namespace WindowsFormsApplication1
         }
 
 //      insert_new_activity
-
         public static void Insert_Activity(DateTime dateFrom, String serviceId, Int32 userId)
         {
             SqlCommand cmd = new SqlCommand();
@@ -218,7 +295,6 @@ namespace WindowsFormsApplication1
         }
 
 //      update_user
-
         public static void Update_User(Int32 id, String name, String surname, String mail, Byte[] photo, String phone, DateTime dateOfBirth)
         {
             SqlCommand cmd = new SqlCommand();
@@ -251,7 +327,8 @@ namespace WindowsFormsApplication1
                     con.Close();
             }
         }
-        // select_users
+        
+// select_users
         public static DataSet Select_Users_By_SearchString(String searchString)
         {
             SqlCommand cmd = new SqlCommand();
