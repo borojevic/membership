@@ -99,14 +99,22 @@ namespace WindowsFormsApplication1
                 errorMessage = "This field is required.";
                 return false;
             }
-
+            // @"^[a-zA-Z]+$"
+            bool smth = true;
             if (!Regex.IsMatch(str, @"^[a-zA-Z]+$"))
             {
                 errorMessage = "Only letters allowed.";
-                return false;
+                //return false;
+                smth = false;
             }
+            if(Regex.IsMatch(str, @"\p{IsCyrillic}"))
+            {
+                smth = true;
+            }
+            
             errorMessage = "";
-            return true;
+            //return true;
+            return smth;
         }
 
         public static bool ValidateNumber(string str, out string errorMessage)
@@ -337,6 +345,23 @@ namespace WindowsFormsApplication1
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@searchString", searchString);
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "Data");
+
+            return ds;
+        }
+//select services
+
+        public static DataSet Select_Service_By_ID(Int32 id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select_services";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id", id);
 
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

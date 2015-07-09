@@ -36,6 +36,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_t1_refresh = new System.Windows.Forms.Button();
             this.btn_printForm = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.pb_t1_photo = new System.Windows.Forms.PictureBox();
@@ -115,8 +116,15 @@
             this.ep_t1_photo = new System.Windows.Forms.ErrorProvider(this.components);
             this.ep_t1_birthdate = new System.Windows.Forms.ErrorProvider(this.components);
             this.ep_t1_datefrom = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btn_t1_refresh = new System.Windows.Forms.Button();
             this.ep_t2_usercode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t3_name = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t3_surname = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t3_phone = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t3_mail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t3_birthdate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ep_t3_dateFrom = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tb_t3_activationCode = new System.Windows.Forms.TextBox();
+            this.lbl_t3_activationCode = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t1_photo)).BeginInit();
@@ -138,6 +146,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_birthdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_datefrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t2_usercode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_name)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_surname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_phone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_mail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_birthdate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_dateFrom)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -182,6 +196,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Нов корисник";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_t1_refresh
+            // 
+            this.btn_t1_refresh.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_t1_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t1_refresh.Location = new System.Drawing.Point(94, 613);
+            this.btn_t1_refresh.Name = "btn_t1_refresh";
+            this.btn_t1_refresh.Size = new System.Drawing.Size(145, 30);
+            this.btn_t1_refresh.TabIndex = 22;
+            this.btn_t1_refresh.Text = "Освежи";
+            this.btn_t1_refresh.UseVisualStyleBackColor = true;
+            this.btn_t1_refresh.Click += new System.EventHandler(this.btn_t1_refresh_Click);
             // 
             // btn_printForm
             // 
@@ -255,7 +281,7 @@
             // 
             // dtp_t1_dateFrom
             // 
-            this.dtp_t1_dateFrom.CustomFormat = "dd-MM-yyyy";
+            this.dtp_t1_dateFrom.CustomFormat = "yyyy - MM - dd";
             this.dtp_t1_dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_t1_dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_t1_dateFrom.Location = new System.Drawing.Point(308, 250);
@@ -290,7 +316,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.CustomFormat = "yyyy - MM - dd";
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(308, 206);
@@ -316,6 +342,7 @@
             this.tb_t1_phone.Name = "tb_t1_phone";
             this.tb_t1_phone.Size = new System.Drawing.Size(277, 24);
             this.tb_t1_phone.TabIndex = 7;
+            this.tb_t1_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t1_phone_KeyPress);
             this.tb_t1_phone.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t1_phone_Validating);
             this.tb_t1_phone.Validated += new System.EventHandler(this.tb_t1_phone_Validated);
             // 
@@ -356,6 +383,7 @@
             this.tb_t1_surname.Name = "tb_t1_surname";
             this.tb_t1_surname.Size = new System.Drawing.Size(277, 24);
             this.tb_t1_surname.TabIndex = 3;
+            this.tb_t1_surname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t1_surname_KeyPress);
             this.tb_t1_surname.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t1_surname_Validating);
             this.tb_t1_surname.Validated += new System.EventHandler(this.tb_t1_surname_Validated);
             // 
@@ -376,6 +404,7 @@
             this.tb_t1_name.Name = "tb_t1_name";
             this.tb_t1_name.Size = new System.Drawing.Size(277, 24);
             this.tb_t1_name.TabIndex = 1;
+            this.tb_t1_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t1_name_KeyPress);
             this.tb_t1_name.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t1_name_Validating);
             this.tb_t1_name.Validated += new System.EventHandler(this.tb_t1_name_Validated);
             // 
@@ -419,6 +448,7 @@
             // 
             // btn_t2_submit
             // 
+            this.btn_t2_submit.Enabled = false;
             this.btn_t2_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_t2_submit.Location = new System.Drawing.Point(471, 603);
             this.btn_t2_submit.Name = "btn_t2_submit";
@@ -445,6 +475,8 @@
             this.tb_t2_serviceID.Name = "tb_t2_serviceID";
             this.tb_t2_serviceID.Size = new System.Drawing.Size(280, 24);
             this.tb_t2_serviceID.TabIndex = 4;
+            this.tb_t2_serviceID.TextChanged += new System.EventHandler(this.tb_t2_serviceID_TextChanged);
+            this.tb_t2_serviceID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t2_serviceID_KeyPress);
             // 
             // label11
             // 
@@ -712,6 +744,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tb_t3_activationCode);
+            this.panel2.Controls.Add(this.lbl_t3_activationCode);
             this.panel2.Controls.Add(this.dtp_t3_dateFrom);
             this.panel2.Controls.Add(this.dtp_t3_birthdate);
             this.panel2.Controls.Add(this.label23);
@@ -730,12 +764,12 @@
             this.panel2.Controls.Add(this.label20);
             this.panel2.Location = new System.Drawing.Point(21, 314);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(632, 302);
+            this.panel2.Size = new System.Drawing.Size(632, 324);
             this.panel2.TabIndex = 3;
             // 
             // dtp_t3_dateFrom
             // 
-            this.dtp_t3_dateFrom.CustomFormat = "dd-MM-yyyy";
+            this.dtp_t3_dateFrom.CustomFormat = "yyyy - MM - dd";
             this.dtp_t3_dateFrom.Enabled = false;
             this.dtp_t3_dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_t3_dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -750,7 +784,7 @@
             // 
             // dtp_t3_birthdate
             // 
-            this.dtp_t3_birthdate.CustomFormat = "dd-MM-yyyy";
+            this.dtp_t3_birthdate.CustomFormat = "yyyy - MM - dd";
             this.dtp_t3_birthdate.Enabled = false;
             this.dtp_t3_birthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_t3_birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -761,6 +795,8 @@
             this.dtp_t3_birthdate.Size = new System.Drawing.Size(211, 24);
             this.dtp_t3_birthdate.TabIndex = 14;
             this.dtp_t3_birthdate.Value = new System.DateTime(2015, 6, 27, 0, 0, 0, 0);
+            this.dtp_t3_birthdate.ValueChanged += new System.EventHandler(this.dtp_t3_birthdate_ValueChanged);
+            this.dtp_t3_birthdate.EnabledChanged += new System.EventHandler(this.dtp_t3_birthdate_EnabledChanged);
             // 
             // label23
             // 
@@ -780,6 +816,9 @@
             this.tb_t3_phone.Name = "tb_t3_phone";
             this.tb_t3_phone.Size = new System.Drawing.Size(211, 24);
             this.tb_t3_phone.TabIndex = 12;
+            this.tb_t3_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t3_phone_KeyPress);
+            this.tb_t3_phone.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t3_phone_Validating);
+            this.tb_t3_phone.Validated += new System.EventHandler(this.tb_t3_phone_Validated);
             // 
             // label22
             // 
@@ -799,6 +838,8 @@
             this.tb_t3_mail.Name = "tb_t3_mail";
             this.tb_t3_mail.Size = new System.Drawing.Size(211, 24);
             this.tb_t3_mail.TabIndex = 10;
+            this.tb_t3_mail.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t3_mail_Validating);
+            this.tb_t3_mail.Validated += new System.EventHandler(this.tb_t3_mail_Validated);
             // 
             // label21
             // 
@@ -818,6 +859,9 @@
             this.tb_t3_surname.Name = "tb_t3_surname";
             this.tb_t3_surname.Size = new System.Drawing.Size(211, 24);
             this.tb_t3_surname.TabIndex = 8;
+            this.tb_t3_surname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t3_surname_KeyPress);
+            this.tb_t3_surname.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t3_surname_Validating);
+            this.tb_t3_surname.Validated += new System.EventHandler(this.tb_t3_surname_Validated);
             // 
             // tb_t3_name
             // 
@@ -827,6 +871,9 @@
             this.tb_t3_name.Name = "tb_t3_name";
             this.tb_t3_name.Size = new System.Drawing.Size(211, 24);
             this.tb_t3_name.TabIndex = 7;
+            this.tb_t3_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t3_name_KeyPress);
+            this.tb_t3_name.Validating += new System.ComponentModel.CancelEventHandler(this.tb_t3_name_Validating);
+            this.tb_t3_name.Validated += new System.EventHandler(this.tb_t3_name_Validated);
             // 
             // btn_t3_upload
             // 
@@ -907,6 +954,7 @@
             this.tb_t3_search.Name = "tb_t3_search";
             this.tb_t3_search.Size = new System.Drawing.Size(632, 24);
             this.tb_t3_search.TabIndex = 1;
+            this.tb_t3_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t3_search_KeyPress);
             this.tb_t3_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_t3_search_KeyUp);
             // 
             // printDialog1
@@ -962,22 +1010,61 @@
             this.ep_t1_datefrom.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.ep_t1_datefrom.ContainerControl = this;
             // 
-            // btn_t1_refresh
-            // 
-            this.btn_t1_refresh.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_t1_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_t1_refresh.Location = new System.Drawing.Point(94, 613);
-            this.btn_t1_refresh.Name = "btn_t1_refresh";
-            this.btn_t1_refresh.Size = new System.Drawing.Size(145, 30);
-            this.btn_t1_refresh.TabIndex = 22;
-            this.btn_t1_refresh.Text = "Освежи";
-            this.btn_t1_refresh.UseVisualStyleBackColor = true;
-            this.btn_t1_refresh.Click += new System.EventHandler(this.btn_t1_refresh_Click);
-            // 
             // ep_t2_usercode
             // 
             this.ep_t2_usercode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.ep_t2_usercode.ContainerControl = this;
+            // 
+            // ep_t3_name
+            // 
+            this.ep_t3_name.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t3_name.ContainerControl = this;
+            // 
+            // ep_t3_surname
+            // 
+            this.ep_t3_surname.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t3_surname.ContainerControl = this;
+            // 
+            // ep_t3_phone
+            // 
+            this.ep_t3_phone.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t3_phone.ContainerControl = this;
+            // 
+            // ep_t3_mail
+            // 
+            this.ep_t3_mail.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t3_mail.ContainerControl = this;
+            // 
+            // ep_t3_birthdate
+            // 
+            this.ep_t3_birthdate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t3_birthdate.ContainerControl = this;
+            // 
+            // ep_t3_dateFrom
+            // 
+            this.ep_t3_dateFrom.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep_t3_dateFrom.ContainerControl = this;
+            // 
+            // tb_t3_activationCode
+            // 
+            this.tb_t3_activationCode.Enabled = false;
+            this.tb_t3_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t3_activationCode.Location = new System.Drawing.Point(197, 288);
+            this.tb_t3_activationCode.Name = "tb_t3_activationCode";
+            this.tb_t3_activationCode.Size = new System.Drawing.Size(211, 24);
+            this.tb_t3_activationCode.TabIndex = 17;
+            this.tb_t3_activationCode.Visible = false;
+            // 
+            // lbl_t3_activationCode
+            // 
+            this.lbl_t3_activationCode.AutoSize = true;
+            this.lbl_t3_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t3_activationCode.Location = new System.Drawing.Point(11, 290);
+            this.lbl_t3_activationCode.Name = "lbl_t3_activationCode";
+            this.lbl_t3_activationCode.Size = new System.Drawing.Size(130, 18);
+            this.lbl_t3_activationCode.TabIndex = 16;
+            this.lbl_t3_activationCode.Text = "Активациски код:";
+            this.lbl_t3_activationCode.Visible = false;
             // 
             // Form1
             // 
@@ -988,6 +1075,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Спортски Центар „Борис Трајковски“";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1015,6 +1103,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_birthdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_datefrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t2_usercode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_name)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_surname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_phone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_mail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_birthdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep_t3_dateFrom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1104,6 +1198,14 @@
         private System.Windows.Forms.ErrorProvider ep_t1_datefrom;
         private System.Windows.Forms.Button btn_t1_refresh;
         private System.Windows.Forms.ErrorProvider ep_t2_usercode;
+        private System.Windows.Forms.ErrorProvider ep_t3_name;
+        private System.Windows.Forms.ErrorProvider ep_t3_surname;
+        private System.Windows.Forms.ErrorProvider ep_t3_phone;
+        private System.Windows.Forms.ErrorProvider ep_t3_mail;
+        private System.Windows.Forms.ErrorProvider ep_t3_birthdate;
+        private System.Windows.Forms.ErrorProvider ep_t3_dateFrom;
+        private System.Windows.Forms.TextBox tb_t3_activationCode;
+        private System.Windows.Forms.Label lbl_t3_activationCode;
 
 
 

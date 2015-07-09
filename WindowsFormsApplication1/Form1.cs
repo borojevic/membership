@@ -187,6 +187,10 @@ namespace WindowsFormsApplication1
         private void btn_t2_submit_Click(object sender, EventArgs e)
         {
             FunctionClass.Insert_Activity(Convert.ToDateTime(tb_t2_time.Text), tb_t2_serviceID.Text, Int32.Parse(tb_t2_userCode.Text));
+            MessageBox.Show("Успешен внес.");
+            tb_t2_serviceID.Text = "";
+            tb_t2_userCode.Text = "";
+            btn_t2_submit.Enabled = false;
         }
 
         private void dgv_users_SelectionChanged(object sender, EventArgs e)
@@ -238,13 +242,14 @@ namespace WindowsFormsApplication1
         }
         private void fill_Card_Info(DateTime dateFrom)
         {
-            lbl_t3_dateFrom.Text = dateFrom.ToString("dd.MM.yyyy");
-            lbl_t3_dateTo.Text = dateFrom.AddMonths(1).ToString("dd.MM.yyyy");
+            lbl_t3_dateFrom.Text = dateFrom.ToString("yyyy - MM - dd");
+            lbl_t3_dateTo.Text = dateFrom.AddMonths(1).ToString("yyyy - MM - dd");
            // dtp_t3_dateFrom.MinDate = Convert.ToDateTime(dateFrom).AddDays(-1); !!!!!!!!!!!!!!!!!!!!
             //dtp_t3_dateFrom.MaxDate = dateFrom.AddDays(1);
             dtp_t3_dateFrom.MinDate = Convert.ToDateTime("01/01/1758");
             dtp_t3_dateFrom.MaxDate = Convert.ToDateTime("01/01/2099");
-            dtp_t3_dateFrom.Value = dateFrom;
+            //dtp_t3_dateFrom.Value = dateFrom;
+            dtp_t3_dateFrom.Value = DateTime.Today;
         }
 
         private void btn_t3_edit_Click(object sender, EventArgs e)
@@ -267,6 +272,9 @@ namespace WindowsFormsApplication1
             tb_t3_mail.Enabled = true;
             tb_t3_phone.Enabled = true;
             btn_t3_upload.Enabled = true;
+
+            lbl_t3_activationCode.Visible = false;
+            tb_t3_activationCode.Visible = false;
         }
 
         private void btn_t3_upload_Click(object sender, EventArgs e)
@@ -291,19 +299,22 @@ namespace WindowsFormsApplication1
             }
             else if(t3_flag == 2)
             { 
-                long activationCode = FunctionClass.ActivationCodeGenerator();
-                while (!FunctionClass.ValidateActivationCode(activationCode.ToString()))
-                {
-                    activationCode = FunctionClass.ActivationCodeGenerator();
-                }
-                tb_t1_activationCode.Text = activationCode.ToString();
+                //long activationCode = FunctionClass.ActivationCodeGenerator();
+                //while (!FunctionClass.ValidateActivationCode(activationCode.ToString()))
+                //{
+                //    activationCode = FunctionClass.ActivationCodeGenerator();
+                //}
+                //tb_t1_activationCode.Text = activationCode.ToString();
                 Int32 userID = Int32.Parse(dgv_users.SelectedRows[0].Cells[0].Value.ToString());
-                FunctionClass.Insert_GoldCard(dtp_t3_dateFrom.Value, dtp_t3_dateFrom.Value.AddMonths(1), activationCode.ToString(), userID);
+                FunctionClass.Insert_GoldCard(dtp_t3_dateFrom.Value, dtp_t3_dateFrom.Value.AddMonths(1), tb_t3_activationCode.Text, userID);
             }
 
             this.usersTableAdapter1.Fill(this._dp_gold_membershipDataSet1.Users);
             // separate load dgv_users data function ? (instead of using dataSet)
-            
+            tb_t3_activationCode.Text = "";
+            tb_t3_activationCode.Visible = false;
+            lbl_t3_activationCode.Visible = false;
+
             dtp_t3_birthdate.Enabled = false;
             btn_t3_upload.Enabled = false;
             btn_t3_submit.Enabled = false;
@@ -343,6 +354,15 @@ namespace WindowsFormsApplication1
                     dgv_users.SelectedRows[0].Cells[6].Value.ToString()); 
             }
             t3_flag = 2;
+
+            //generating AC
+            long activationCode = FunctionClass.ActivationCodeGenerator();
+            while (!FunctionClass.ValidateActivationCode(activationCode.ToString()))
+            {
+                activationCode = FunctionClass.ActivationCodeGenerator();
+            }
+            tb_t3_activationCode.Text = activationCode.ToString();
+            lbl_t3_dateTo.Text = dtp_t3_dateFrom.Value.AddMonths(1).ToString("yyyy - MM - dd");
             dtp_t3_dateFrom.Visible = true;
             dtp_t3_dateFrom.Enabled = true;
             dtp_t3_birthdate.Enabled = false;
@@ -352,12 +372,34 @@ namespace WindowsFormsApplication1
             tb_t3_mail.Enabled = false;
             tb_t3_phone.Enabled = false;
             btn_t3_submit.Enabled = true;
+            tb_t3_activationCode.Visible = true;
+            lbl_t3_activationCode.Visible = true;
+
 
         }
 
         private void dtp_t3_dateFrom_ValueChanged(object sender, EventArgs e)
         {
-            lbl_t3_dateTo.Text = dtp_t3_dateFrom.Value.AddMonths(1).ToString("dd.MM.yyyy");
+
+            if (btn_t3_submit.Enabled == true)
+                btn_t3_submit.Enabled = false;
+
+            dtp_t3_dateFrom.MinDate = DateTime.Today;
+            if (dtp_t3_dateFrom.Value.Date < DateTime.Today.Date)
+            {
+                this.ep_t3_dateFrom.Icon = Properties.Resources.err;
+                this.ep_t3_dateFrom.SetError(dtp_t3_dateFrom, "Not a correct date.");
+            }
+            else
+            {
+                this.ep_t3_dateFrom.Icon = Properties.Resources.ok;
+                this.ep_t3_dateFrom.SetError(dtp_t3_dateFrom, "Okay.");
+                if (btn_t3_submit.Enabled == false)
+                    btn_t3_submit.Enabled = true;
+            }
+
+            lbl_t3_dateTo.Text = dtp_t3_dateFrom.Value.AddMonths(1).ToString("yyyy - MM - dd");
+
         }
 
         private void tb_t1_mail_Validated(object sender, EventArgs e)
@@ -525,12 +567,12 @@ namespace WindowsFormsApplication1
             if (dtp_t1_dateFrom.Value.Date < DateTime.Today.Date)
             {
                 this.ep_t1_datefrom.Icon = Properties.Resources.err;
-                this.ep_t1_datefrom.SetError(dtp_t1_dateFrom, "Not a correct date.");
+                this.ep_t1_datefrom.SetError(dtp_t1_dateFrom, "Грешка!");
             }
             else
             {
                 this.ep_t1_datefrom.Icon = Properties.Resources.ok;
-                this.ep_t1_datefrom.SetError(dtp_t1_dateFrom, "Okay.");
+                this.ep_t1_datefrom.SetError(dtp_t1_dateFrom, "Валидно");
                 if (button1.Enabled == false)
                     button1.Enabled = true;
             }
@@ -580,12 +622,12 @@ namespace WindowsFormsApplication1
             if (dateTimePicker1.Value.Date == DateTime.Today.Date)
             {
                 this.ep_t1_birthdate.Icon = Properties.Resources.err;
-                this.ep_t1_birthdate.SetError(dateTimePicker1, "Not a correct date.");
+                this.ep_t1_birthdate.SetError(dateTimePicker1, "Внесете дата помала од " + DateTime.Today.ToString("dd.MM.yyyy"));
             }
             else
             {
                 this.ep_t1_birthdate.Icon = Properties.Resources.ok;
-                this.ep_t1_birthdate.SetError(dateTimePicker1, "Okay.");
+                this.ep_t1_birthdate.SetError(dateTimePicker1, "Валидно");
                 if (button1.Enabled == false)
                     button1.Enabled = true;           
             }
@@ -616,13 +658,255 @@ namespace WindowsFormsApplication1
         private void btn_t1_refresh_Click(object sender, EventArgs e)
         {
             //this.Refresh();
-            Application.Restart();
+            //Application.Restart();
+            tb_t1_name.Text = "";
+            tb_t1_surname.Text = "";
+            tb_t1_mail.Text = "";
+            tb_t1_phone.Text = "";
+            dateTimePicker1.Value = DateTime.Today;
+            dtp_t1_dateFrom.Value = DateTime.Today;
+            pb_t1_photo.Image = pb_t1_photo.InitialImage;
+            tb_t1_activationCode.Text = "";
+
+            ep_t1_name.Clear();
+            ep_t1_surname.Clear();
+            ep_t1_mail.Clear();
+            ep_t1_phone.Clear();
+            ep_t1_birthdate.Clear();
+            ep_t1_datefrom.Clear();
+            ep_t1_activationCode.Clear();
+            ep_t1_photo.Clear();
+
+
         }
 
         private void tb_t2_userCode_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
         }
+
+        private void tb_t2_serviceID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void tb_t2_serviceID_TextChanged(object sender, EventArgs e)
+        {
+            if (tb_t2_serviceID.Text != "")
+            {
+                DataSet ds = FunctionClass.Select_Service_By_ID(Int32.Parse(tb_t2_serviceID.Text));
+                if (ds.Tables["Data"].Rows.Count > 0)
+                {
+                    btn_t2_submit.Enabled = true;
+                }
+                else
+                {
+                    btn_t2_submit.Enabled = false;
+                }
+            }
+            else
+                btn_t2_submit.Enabled = false;
+        }
+
+        private void tb_t1_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void tb_t1_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsLetter(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void tb_t1_surname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsLetter(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void tb_t3_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8 || Char.IsLetter(e.KeyChar));
+
+        }
+
+        private void tb_t3_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsLetter(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void tb_t3_surname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsLetter(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void tb_t3_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void tb_t3_name_Validated(object sender, EventArgs e)
+        {
+            ep_t3_name.SetError(tb_t3_name, "Validated");
+            if (btn_t3_submit.Enabled == false)
+                btn_t3_submit.Enabled = true;
+        }
+
+        private void tb_t3_name_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (btn_t3_submit.Enabled == true)
+                btn_t3_submit.Enabled = false;
+
+            string errorMsg;
+            if (!FunctionClass.ValidateString(tb_t3_name.Text, out errorMsg))
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                tb_t3_name.Select(0, tb_t3_name.Text.Length);
+                // Set the ErrorProvider error with the text to display.  
+                this.ep_t3_name.SetError(tb_t3_name, errorMsg);
+                this.ep_t3_name.Icon = Properties.Resources.err;
+            }
+            else
+            {
+                e.Cancel = false;
+                this.ep_t3_name.SetError(tb_t3_name, "Okay.");
+                this.ep_t3_name.Icon = Properties.Resources.ok;
+            }
+        }
+
+        private void tb_t3_surname_Validated(object sender, EventArgs e)
+        {
+            ep_t3_surname.SetError(tb_t3_surname, "Validated");
+            if (btn_t3_submit.Enabled == false)
+                btn_t3_submit.Enabled = true;
+        }
+
+        private void tb_t3_surname_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (btn_t3_submit.Enabled == true)
+                btn_t3_submit.Enabled = false;
+
+            string errorMsg;
+            if (!FunctionClass.ValidateString(tb_t3_surname.Text, out errorMsg))
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                tb_t3_surname.Select(0, tb_t3_surname.Text.Length);
+                // Set the ErrorProvider error with the text to display.  
+                this.ep_t3_surname.SetError(tb_t3_surname, errorMsg);
+                this.ep_t3_surname.Icon = Properties.Resources.err;
+            }
+            else
+            {
+                e.Cancel = false;
+                this.ep_t3_surname.SetError(tb_t3_surname, "Okay.");
+                this.ep_t3_surname.Icon = Properties.Resources.ok;
+            }
+        }
+
+        private void tb_t3_phone_Validated(object sender, EventArgs e)
+        {
+            ep_t3_phone.SetError(tb_t3_phone, "Validated");
+            if (btn_t3_submit.Enabled == false)
+                btn_t3_submit.Enabled = true;
+        }
+
+        private void tb_t3_phone_Validating(object sender, CancelEventArgs e)
+        {
+            if (btn_t3_submit.Enabled == true)
+                btn_t3_submit.Enabled = false;
+
+            string errorMsg;
+            if (!FunctionClass.ValidateNumber(tb_t3_phone.Text, out errorMsg))
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                tb_t3_phone.Select(0, tb_t3_phone.Text.Length);
+
+                // Set the ErrorProvider error with the text to display.  
+                this.ep_t3_phone.SetError(tb_t3_phone, errorMsg);
+                this.ep_t3_phone.Icon = Properties.Resources.err;
+            }
+            else
+            {
+                e.Cancel = false;
+                this.ep_t3_phone.SetError(tb_t3_phone, "Okay.");
+                this.ep_t3_phone.Icon = Properties.Resources.ok;
+            }
+        }
+
+        private void tb_t3_mail_Validated(object sender, EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            ep_t3_mail.SetError(tb_t3_mail, "Validated");
+            if (btn_t3_submit.Enabled == false)
+                btn_t3_submit.Enabled = true;
+        }
+
+        private void tb_t3_mail_Validating(object sender, CancelEventArgs e)
+        {
+            if (btn_t3_submit.Enabled == true)
+                btn_t3_submit.Enabled = false;
+
+            string errorMsg;
+            if (!FunctionClass.ValidateEmailAddress(tb_t3_mail.Text, out errorMsg))
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                tb_t3_mail.Select(0, tb_t3_mail.Text.Length);
+
+                // Set the ErrorProvider error with the text to display.  
+                this.ep_t3_mail.SetError(tb_t3_mail, errorMsg);
+                this.ep_t3_mail.Icon = Properties.Resources.err;
+            }
+            else
+            {
+                e.Cancel = false;
+                this.ep_t3_mail.SetError(tb_t3_mail, "Okay.");
+                this.ep_t3_mail.Icon = Properties.Resources.ok;
+            }
+        }
+
+        private void dtp_t3_birthdate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtp_t3_birthdate.Enabled == true)
+            {
+                if (btn_t3_submit.Enabled == true)
+                    btn_t3_submit.Enabled = false;
+
+                dtp_t3_birthdate.MaxDate = DateTime.Today;
+                if (dtp_t3_birthdate.Value.Date >= DateTime.Today.Date)
+                {
+                    this.ep_t3_birthdate.Icon = Properties.Resources.err;
+                    this.ep_t3_birthdate.SetError(dtp_t3_birthdate, "Not a correct date.");
+                }
+                else
+                {
+                    this.ep_t3_birthdate.Icon = Properties.Resources.ok;
+                    this.ep_t3_birthdate.SetError(dtp_t3_birthdate, "Okay.");
+                    if (btn_t3_submit.Enabled == false)
+                        btn_t3_submit.Enabled = true;
+                }
+            }
+        }
+
+        private void dtp_t3_birthdate_EnabledChanged(object sender, EventArgs e)
+        {
+            dtp_t3_birthdate_ValueChanged(this, e);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AutoValidate = AutoValidate.Disable;
+            Application.Exit();
+        }
+
+
+
+
+
 
 
     }
