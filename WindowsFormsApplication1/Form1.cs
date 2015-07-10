@@ -329,6 +329,15 @@ namespace WindowsFormsApplication1
             btn_t3_upload.Enabled = false;
             t3_flag = -1;
             lbl_t3_search.Focus();
+
+            ep_t3_name.Clear();
+            ep_t3_surname.Clear();
+            ep_t3_mail.Clear();
+            ep_t3_phone.Clear();
+            ep_t3_birthdate.Clear();
+            ep_t3_dateFrom.Clear();
+            //ep_t1_activationCode.Clear();
+           // ep_t1_photo.Clear();
         }
 
         private void tb_t3_search_KeyUp(object sender, KeyEventArgs e)
@@ -380,26 +389,27 @@ namespace WindowsFormsApplication1
 
         private void dtp_t3_dateFrom_ValueChanged(object sender, EventArgs e)
         {
-
-            if (btn_t3_submit.Enabled == true)
-                btn_t3_submit.Enabled = false;
-
-            dtp_t3_dateFrom.MinDate = DateTime.Today;
-            if (dtp_t3_dateFrom.Value.Date < DateTime.Today.Date)
+            if (dtp_t3_dateFrom.Enabled == true)
             {
-                this.ep_t3_dateFrom.Icon = Properties.Resources.err;
-                this.ep_t3_dateFrom.SetError(dtp_t3_dateFrom, "Not a correct date.");
-            }
-            else
-            {
-                this.ep_t3_dateFrom.Icon = Properties.Resources.ok;
-                this.ep_t3_dateFrom.SetError(dtp_t3_dateFrom, "Okay.");
-                if (btn_t3_submit.Enabled == false)
-                    btn_t3_submit.Enabled = true;
-            }
+                if (btn_t3_submit.Enabled == true)
+                    btn_t3_submit.Enabled = false;
 
+                dtp_t3_dateFrom.MinDate = DateTime.Today;
+                if (dtp_t3_dateFrom.Value.Date < DateTime.Today.Date)
+                {
+                    this.ep_t3_dateFrom.Icon = Properties.Resources.err;
+                    this.ep_t3_dateFrom.SetError(dtp_t3_dateFrom, "Not a correct date.");
+                }
+                else
+                {
+                    this.ep_t3_dateFrom.Icon = Properties.Resources.ok;
+                    this.ep_t3_dateFrom.SetError(dtp_t3_dateFrom, "Okay.");
+                    if (btn_t3_submit.Enabled == false)
+                        btn_t3_submit.Enabled = true;
+                }
+            }
             lbl_t3_dateTo.Text = dtp_t3_dateFrom.Value.AddMonths(1).ToString("yyyy - MM - dd");
-
+            
         }
 
         private void tb_t1_mail_Validated(object sender, EventArgs e)
@@ -572,7 +582,7 @@ namespace WindowsFormsApplication1
             else
             {
                 this.ep_t1_datefrom.Icon = Properties.Resources.ok;
-                this.ep_t1_datefrom.SetError(dtp_t1_dateFrom, "Валидно");
+                this.ep_t1_datefrom.SetError(dtp_t1_dateFrom, "Okay.");
                 if (button1.Enabled == false)
                     button1.Enabled = true;
             }
@@ -627,7 +637,7 @@ namespace WindowsFormsApplication1
             else
             {
                 this.ep_t1_birthdate.Icon = Properties.Resources.ok;
-                this.ep_t1_birthdate.SetError(dateTimePicker1, "Валидно");
+                this.ep_t1_birthdate.SetError(dateTimePicker1, "Okay.");
                 if (button1.Enabled == false)
                     button1.Enabled = true;           
             }
@@ -901,6 +911,11 @@ namespace WindowsFormsApplication1
         {
             AutoValidate = AutoValidate.Disable;
             Application.Exit();
+        }
+
+        private void dtp_t3_dateFrom_EnabledChanged(object sender, EventArgs e)
+        {
+            dtp_t3_dateFrom_ValueChanged(this, e);
         }
 
 

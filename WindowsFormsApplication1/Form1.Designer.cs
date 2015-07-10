@@ -87,6 +87,8 @@
             this.btn_t3_edit = new System.Windows.Forms.Button();
             this.btn_t3_submit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tb_t3_activationCode = new System.Windows.Forms.TextBox();
+            this.lbl_t3_activationCode = new System.Windows.Forms.Label();
             this.dtp_t3_dateFrom = new System.Windows.Forms.DateTimePicker();
             this.dtp_t3_birthdate = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
@@ -123,8 +125,6 @@
             this.ep_t3_mail = new System.Windows.Forms.ErrorProvider(this.components);
             this.ep_t3_birthdate = new System.Windows.Forms.ErrorProvider(this.components);
             this.ep_t3_dateFrom = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tb_t3_activationCode = new System.Windows.Forms.TextBox();
-            this.lbl_t3_activationCode = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t1_photo)).BeginInit();
@@ -767,6 +767,27 @@
             this.panel2.Size = new System.Drawing.Size(632, 324);
             this.panel2.TabIndex = 3;
             // 
+            // tb_t3_activationCode
+            // 
+            this.tb_t3_activationCode.Enabled = false;
+            this.tb_t3_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t3_activationCode.Location = new System.Drawing.Point(197, 288);
+            this.tb_t3_activationCode.Name = "tb_t3_activationCode";
+            this.tb_t3_activationCode.Size = new System.Drawing.Size(211, 24);
+            this.tb_t3_activationCode.TabIndex = 17;
+            this.tb_t3_activationCode.Visible = false;
+            // 
+            // lbl_t3_activationCode
+            // 
+            this.lbl_t3_activationCode.AutoSize = true;
+            this.lbl_t3_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t3_activationCode.Location = new System.Drawing.Point(11, 290);
+            this.lbl_t3_activationCode.Name = "lbl_t3_activationCode";
+            this.lbl_t3_activationCode.Size = new System.Drawing.Size(130, 18);
+            this.lbl_t3_activationCode.TabIndex = 16;
+            this.lbl_t3_activationCode.Text = "Активациски код:";
+            this.lbl_t3_activationCode.Visible = false;
+            // 
             // dtp_t3_dateFrom
             // 
             this.dtp_t3_dateFrom.CustomFormat = "yyyy - MM - dd";
@@ -781,6 +802,7 @@
             this.dtp_t3_dateFrom.Value = new System.DateTime(2015, 6, 27, 0, 0, 0, 0);
             this.dtp_t3_dateFrom.Visible = false;
             this.dtp_t3_dateFrom.ValueChanged += new System.EventHandler(this.dtp_t3_dateFrom_ValueChanged);
+            this.dtp_t3_dateFrom.EnabledChanged += new System.EventHandler(this.dtp_t3_dateFrom_EnabledChanged);
             // 
             // dtp_t3_birthdate
             // 
@@ -1044,27 +1066,6 @@
             // 
             this.ep_t3_dateFrom.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.ep_t3_dateFrom.ContainerControl = this;
-            // 
-            // tb_t3_activationCode
-            // 
-            this.tb_t3_activationCode.Enabled = false;
-            this.tb_t3_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_t3_activationCode.Location = new System.Drawing.Point(197, 288);
-            this.tb_t3_activationCode.Name = "tb_t3_activationCode";
-            this.tb_t3_activationCode.Size = new System.Drawing.Size(211, 24);
-            this.tb_t3_activationCode.TabIndex = 17;
-            this.tb_t3_activationCode.Visible = false;
-            // 
-            // lbl_t3_activationCode
-            // 
-            this.lbl_t3_activationCode.AutoSize = true;
-            this.lbl_t3_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_t3_activationCode.Location = new System.Drawing.Point(11, 290);
-            this.lbl_t3_activationCode.Name = "lbl_t3_activationCode";
-            this.lbl_t3_activationCode.Size = new System.Drawing.Size(130, 18);
-            this.lbl_t3_activationCode.TabIndex = 16;
-            this.lbl_t3_activationCode.Text = "Активациски код:";
-            this.lbl_t3_activationCode.Visible = false;
             // 
             // Form1
             // 
