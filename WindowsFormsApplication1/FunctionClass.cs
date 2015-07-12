@@ -146,6 +146,23 @@ namespace WindowsFormsApplication1
             return true;
         }
 
+        public static Int32 CalculateAge(DateTime bday)
+        {
+            DateTime today = DateTime.Today;
+            int age = today.Year - bday.Year;
+            if (bday > today.AddYears(-age)) age--;
+            return age;
+        }
+
+        public static double CalculateDaysLeft(DateTime from, DateTime to)
+        {
+            DateTime today = DateTime.Today;
+            if(from < today)
+                return (to.Date - today.Date).TotalDays;
+            else
+                return (to.Date - from.Date).TotalDays;
+        }
+
 //       insert_user
 
         public static void Insert_User(String name, String surname, String mail, Byte[] photo, String phone, DateTime dateOfBirth, DateTime memberSince)
@@ -274,6 +291,24 @@ namespace WindowsFormsApplication1
             return ds;
         }
 
+//       count_activities_by_userId
+
+        public static DataSet Count_Activities_By_UserID(Int32 id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "count_activities_by_userId";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "Data");
+
+            return ds;
+        }
+
 //      insert_new_activity
         public static void Insert_Activity(DateTime dateFrom, String serviceId, Int32 userId)
         {
@@ -352,6 +387,44 @@ namespace WindowsFormsApplication1
 
             return ds;
         }
+
+
+// select_user_by_userId
+        public static DataSet Select_User_By_UserID(Int32 id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select_user_by_userId";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "Data");
+
+            return ds;
+        }
+
+// select_activities_by_userId
+        public static DataSet Select_Activities_By_UserID(Int32 id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select_activities_by_userId";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "Data");
+
+            return ds;
+        }
+
+
+
 //select services
 
         public static DataSet Select_Service_By_ID(Int32 id)

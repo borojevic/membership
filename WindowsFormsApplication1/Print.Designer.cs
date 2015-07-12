@@ -52,6 +52,9 @@
             this.btn_print = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.lbl_dateFrom_value = new System.Windows.Forms.Label();
+            this.lbl_valid = new System.Windows.Forms.Label();
+            this.lbl_dateTo_value = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_scbtLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_finkiLogo)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +73,7 @@
             // 
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.Location = new System.Drawing.Point(108, 235);
+            this.lbl_name.Location = new System.Drawing.Point(108, 221);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(46, 18);
             this.lbl_name.TabIndex = 1;
@@ -80,7 +83,7 @@
             // 
             this.lbl_name_value.AutoSize = true;
             this.lbl_name_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name_value.Location = new System.Drawing.Point(308, 235);
+            this.lbl_name_value.Location = new System.Drawing.Point(308, 221);
             this.lbl_name_value.Name = "lbl_name_value";
             this.lbl_name_value.Size = new System.Drawing.Size(48, 18);
             this.lbl_name_value.TabIndex = 2;
@@ -90,7 +93,7 @@
             // 
             this.lbl_surname.AutoSize = true;
             this.lbl_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_surname.Location = new System.Drawing.Point(108, 268);
+            this.lbl_surname.Location = new System.Drawing.Point(108, 254);
             this.lbl_surname.Name = "lbl_surname";
             this.lbl_surname.Size = new System.Drawing.Size(74, 18);
             this.lbl_surname.TabIndex = 3;
@@ -100,7 +103,7 @@
             // 
             this.lbl_surname_value.AutoSize = true;
             this.lbl_surname_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_surname_value.Location = new System.Drawing.Point(308, 268);
+            this.lbl_surname_value.Location = new System.Drawing.Point(308, 254);
             this.lbl_surname_value.Name = "lbl_surname_value";
             this.lbl_surname_value.Size = new System.Drawing.Size(66, 18);
             this.lbl_surname_value.TabIndex = 4;
@@ -110,7 +113,7 @@
             // 
             this.lbl_mail.AutoSize = true;
             this.lbl_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mail.Location = new System.Drawing.Point(108, 304);
+            this.lbl_mail.Location = new System.Drawing.Point(108, 290);
             this.lbl_mail.Name = "lbl_mail";
             this.lbl_mail.Size = new System.Drawing.Size(54, 18);
             this.lbl_mail.TabIndex = 5;
@@ -120,7 +123,7 @@
             // 
             this.lbl_mail_value.AutoSize = true;
             this.lbl_mail_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mail_value.Location = new System.Drawing.Point(308, 304);
+            this.lbl_mail_value.Location = new System.Drawing.Point(308, 290);
             this.lbl_mail_value.Name = "lbl_mail_value";
             this.lbl_mail_value.Size = new System.Drawing.Size(35, 18);
             this.lbl_mail_value.TabIndex = 6;
@@ -130,7 +133,7 @@
             // 
             this.lbl_birthdate.AutoSize = true;
             this.lbl_birthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_birthdate.Location = new System.Drawing.Point(108, 366);
+            this.lbl_birthdate.Location = new System.Drawing.Point(108, 352);
             this.lbl_birthdate.Name = "lbl_birthdate";
             this.lbl_birthdate.Size = new System.Drawing.Size(121, 18);
             this.lbl_birthdate.TabIndex = 7;
@@ -140,7 +143,7 @@
             // 
             this.lbl_phone.AutoSize = true;
             this.lbl_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_phone.Location = new System.Drawing.Point(108, 335);
+            this.lbl_phone.Location = new System.Drawing.Point(108, 321);
             this.lbl_phone.Name = "lbl_phone";
             this.lbl_phone.Size = new System.Drawing.Size(76, 18);
             this.lbl_phone.TabIndex = 8;
@@ -150,7 +153,7 @@
             // 
             this.lbl_phone_value.AutoSize = true;
             this.lbl_phone_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_phone_value.Location = new System.Drawing.Point(308, 335);
+            this.lbl_phone_value.Location = new System.Drawing.Point(308, 321);
             this.lbl_phone_value.Name = "lbl_phone_value";
             this.lbl_phone_value.Size = new System.Drawing.Size(49, 18);
             this.lbl_phone_value.TabIndex = 9;
@@ -160,7 +163,7 @@
             // 
             this.lbl_birthdate_value.AutoSize = true;
             this.lbl_birthdate_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_birthdate_value.Location = new System.Drawing.Point(308, 366);
+            this.lbl_birthdate_value.Location = new System.Drawing.Point(308, 352);
             this.lbl_birthdate_value.Name = "lbl_birthdate_value";
             this.lbl_birthdate_value.Size = new System.Drawing.Size(85, 18);
             this.lbl_birthdate_value.TabIndex = 10;
@@ -190,7 +193,7 @@
             // 
             this.lbl_userCode_value.AutoSize = true;
             this.lbl_userCode_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_userCode_value.Location = new System.Drawing.Point(308, 201);
+            this.lbl_userCode_value.Location = new System.Drawing.Point(308, 187);
             this.lbl_userCode_value.Name = "lbl_userCode_value";
             this.lbl_userCode_value.Size = new System.Drawing.Size(52, 18);
             this.lbl_userCode_value.TabIndex = 15;
@@ -200,7 +203,7 @@
             // 
             this.lbl_userCode.AutoSize = true;
             this.lbl_userCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_userCode.Location = new System.Drawing.Point(108, 201);
+            this.lbl_userCode.Location = new System.Drawing.Point(108, 187);
             this.lbl_userCode.Name = "lbl_userCode";
             this.lbl_userCode.Size = new System.Drawing.Size(125, 18);
             this.lbl_userCode.TabIndex = 14;
@@ -210,7 +213,7 @@
             // 
             this.lbl_activationCode_value.AutoSize = true;
             this.lbl_activationCode_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_activationCode_value.Location = new System.Drawing.Point(308, 399);
+            this.lbl_activationCode_value.Location = new System.Drawing.Point(308, 386);
             this.lbl_activationCode_value.Name = "lbl_activationCode_value";
             this.lbl_activationCode_value.Size = new System.Drawing.Size(122, 18);
             this.lbl_activationCode_value.TabIndex = 17;
@@ -220,7 +223,7 @@
             // 
             this.lbl_activationCode.AutoSize = true;
             this.lbl_activationCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_activationCode.Location = new System.Drawing.Point(108, 399);
+            this.lbl_activationCode.Location = new System.Drawing.Point(108, 386);
             this.lbl_activationCode.Name = "lbl_activationCode";
             this.lbl_activationCode.Size = new System.Drawing.Size(146, 18);
             this.lbl_activationCode.TabIndex = 16;
@@ -286,11 +289,45 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // lbl_dateFrom_value
+            // 
+            this.lbl_dateFrom_value.AutoSize = true;
+            this.lbl_dateFrom_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dateFrom_value.Location = new System.Drawing.Point(312, 418);
+            this.lbl_dateFrom_value.Name = "lbl_dateFrom_value";
+            this.lbl_dateFrom_value.Size = new System.Drawing.Size(72, 18);
+            this.lbl_dateFrom_value.TabIndex = 24;
+            this.lbl_dateFrom_value.Text = "dateFrom";
+            // 
+            // lbl_valid
+            // 
+            this.lbl_valid.AutoSize = true;
+            this.lbl_valid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_valid.Location = new System.Drawing.Point(108, 418);
+            this.lbl_valid.Name = "lbl_valid";
+            this.lbl_valid.Size = new System.Drawing.Size(73, 18);
+            this.lbl_valid.TabIndex = 23;
+            this.lbl_valid.Text = "Важност:";
+            // 
+            // lbl_dateTo_value
+            // 
+            this.lbl_dateTo_value.AutoSize = true;
+            this.lbl_dateTo_value.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_dateTo_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dateTo_value.Location = new System.Drawing.Point(312, 447);
+            this.lbl_dateTo_value.Name = "lbl_dateTo_value";
+            this.lbl_dateTo_value.Size = new System.Drawing.Size(54, 18);
+            this.lbl_dateTo_value.TabIndex = 26;
+            this.lbl_dateTo_value.Text = "dateTo";
+            // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 619);
+            this.Controls.Add(this.lbl_dateTo_value);
+            this.Controls.Add(this.lbl_dateFrom_value);
+            this.Controls.Add(this.lbl_valid);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.lbl_signature);
             this.Controls.Add(this.lbl_skopje);
@@ -350,6 +387,9 @@
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label lbl_dateFrom_value;
+        private System.Windows.Forms.Label lbl_valid;
+        private System.Windows.Forms.Label lbl_dateTo_value;
 
 
 
@@ -396,6 +436,18 @@
         {
             get { return lbl_userCode_value.Text; }
             set { lbl_userCode_value.Text = value; }
+        }
+
+        public string setDateFrom
+        {
+            get { return lbl_dateFrom_value.Text; }
+            set { lbl_dateFrom_value.Text = value; }
+        }
+
+        public string setDateTo
+        {
+            get { return lbl_dateTo_value.Text; }
+            set { lbl_dateTo_value.Text = value; }
         }
 
         ///

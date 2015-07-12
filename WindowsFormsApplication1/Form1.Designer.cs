@@ -63,15 +63,27 @@
             this.tb_t2_serviceID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_t2_days = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lbl_t2_visit = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lbl_t2_age = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lbl_t2_birthdate = new System.Windows.Forms.Label();
             this.lbl_t2_dateTo = new System.Windows.Forms.Label();
             this.pb_t2_photo = new System.Windows.Forms.PictureBox();
             this.lbl_t2_dateFrom = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.lbl_t2_surname = new System.Windows.Forms.Label();
             this.lbl_t2_name = new System.Windows.Forms.Label();
             this.tb_t2_userCode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_t3_print = new System.Windows.Forms.Button();
             this.dgv_users = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,6 +118,26 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tb_t3_search = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_t4_userCode = new System.Windows.Forms.Label();
+            this.lbl_t4_age = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lbl_t4_birthdate = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lbl_t4_dateTo = new System.Windows.Forms.Label();
+            this.pb_t4_photo = new System.Windows.Forms.PictureBox();
+            this.lbl_t4_dateFrom = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbl_t4_surname = new System.Windows.Forms.Label();
+            this.lbl_t4_name = new System.Windows.Forms.Label();
+            this.btn_t4_print = new System.Windows.Forms.Button();
+            this.dgv_activities = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_t4_search = new System.Windows.Forms.TextBox();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.usersTableAdapter1 = new WindowsFormsApplication1._dp_gold_membershipDataSet1TableAdapters.UsersTableAdapter();
@@ -125,6 +157,7 @@
             this.ep_t3_mail = new System.Windows.Forms.ErrorProvider(this.components);
             this.ep_t3_birthdate = new System.Windows.Forms.ErrorProvider(this.components);
             this.ep_t3_dateFrom = new System.Windows.Forms.ErrorProvider(this.components);
+            this._dp_gold_membershipDataSet2 = new WindowsFormsApplication1._dp_gold_membershipDataSet();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t1_photo)).BeginInit();
@@ -137,6 +170,10 @@
             ((System.ComponentModel.ISupportInitialize)(this._dp_gold_membershipDataSet1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t3_photo)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_t4_photo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_activities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_mail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_name)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_surname)).BeginInit();
@@ -152,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ep_t3_mail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t3_birthdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t3_dateFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._dp_gold_membershipDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -160,6 +198,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(2, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -492,10 +531,21 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lbl_t2_days);
+            this.panel1.Controls.Add(this.label32);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Controls.Add(this.lbl_t2_visit);
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.lbl_t2_age);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.lbl_t2_birthdate);
             this.panel1.Controls.Add(this.lbl_t2_dateTo);
             this.panel1.Controls.Add(this.pb_t2_photo);
             this.panel1.Controls.Add(this.lbl_t2_dateFrom);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.lbl_t2_surname);
             this.panel1.Controls.Add(this.lbl_t2_name);
             this.panel1.Location = new System.Drawing.Point(38, 51);
@@ -503,11 +553,131 @@
             this.panel1.Size = new System.Drawing.Size(608, 280);
             this.panel1.TabIndex = 2;
             // 
+            // lbl_t2_days
+            // 
+            this.lbl_t2_days.AutoSize = true;
+            this.lbl_t2_days.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t2_days.Location = new System.Drawing.Point(161, 194);
+            this.lbl_t2_days.Name = "lbl_t2_days";
+            this.lbl_t2_days.Size = new System.Drawing.Size(53, 18);
+            this.lbl_t2_days.TabIndex = 19;
+            this.lbl_t2_days.Text = "// дена";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(23, 194);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(102, 18);
+            this.label32.TabIndex = 18;
+            this.label32.Text = "Преостанува:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(23, 237);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(113, 18);
+            this.label24.TabIndex = 17;
+            this.label24.Text = "дневни посети:";
+            // 
+            // lbl_t2_visit
+            // 
+            this.lbl_t2_visit.AutoSize = true;
+            this.lbl_t2_visit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t2_visit.Location = new System.Drawing.Point(161, 237);
+            this.lbl_t2_visit.Name = "lbl_t2_visit";
+            this.lbl_t2_visit.Size = new System.Drawing.Size(68, 18);
+            this.lbl_t2_visit.TabIndex = 16;
+            this.lbl_t2_visit.Text = "// посета";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(23, 217);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(62, 18);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "Број на ";
+            // 
+            // lbl_t2_age
+            // 
+            this.lbl_t2_age.AutoSize = true;
+            this.lbl_t2_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t2_age.Location = new System.Drawing.Point(161, 116);
+            this.lbl_t2_age.Name = "lbl_t2_age";
+            this.lbl_t2_age.Size = new System.Drawing.Size(76, 18);
+            this.lbl_t2_age.TabIndex = 14;
+            this.lbl_t2_age.Text = "// возраст";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(23, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 18);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Возраст:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(23, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(121, 18);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Дата на раѓање:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(23, 146);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(73, 18);
+            this.label26.TabIndex = 9;
+            this.label26.Text = "Важност:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(23, 51);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(74, 18);
+            this.label28.TabIndex = 8;
+            this.label28.Text = "Презиме:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(23, 26);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 18);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "Име:";
+            // 
+            // lbl_t2_birthdate
+            // 
+            this.lbl_t2_birthdate.AutoSize = true;
+            this.lbl_t2_birthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t2_birthdate.Location = new System.Drawing.Point(161, 85);
+            this.lbl_t2_birthdate.Name = "lbl_t2_birthdate";
+            this.lbl_t2_birthdate.Size = new System.Drawing.Size(126, 18);
+            this.lbl_t2_birthdate.TabIndex = 6;
+            this.lbl_t2_birthdate.Text = "// дата на раѓање";
+            // 
             // lbl_t2_dateTo
             // 
             this.lbl_t2_dateTo.AutoSize = true;
             this.lbl_t2_dateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_t2_dateTo.Location = new System.Drawing.Point(39, 179);
+            this.lbl_t2_dateTo.Location = new System.Drawing.Point(161, 170);
             this.lbl_t2_dateTo.Name = "lbl_t2_dateTo";
             this.lbl_t2_dateTo.Size = new System.Drawing.Size(74, 18);
             this.lbl_t2_dateTo.TabIndex = 5;
@@ -530,27 +700,17 @@
             // 
             this.lbl_t2_dateFrom.AutoSize = true;
             this.lbl_t2_dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_t2_dateFrom.Location = new System.Drawing.Point(39, 156);
+            this.lbl_t2_dateFrom.Location = new System.Drawing.Point(161, 147);
             this.lbl_t2_dateFrom.Name = "lbl_t2_dateFrom";
             this.lbl_t2_dateFrom.Size = new System.Drawing.Size(74, 18);
             this.lbl_t2_dateFrom.TabIndex = 3;
             this.lbl_t2_dateFrom.Text = "// дата од";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(39, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 18);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Важност:";
-            // 
             // lbl_t2_surname
             // 
             this.lbl_t2_surname.AutoSize = true;
             this.lbl_t2_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_t2_surname.Location = new System.Drawing.Point(39, 67);
+            this.lbl_t2_surname.Location = new System.Drawing.Point(161, 51);
             this.lbl_t2_surname.Name = "lbl_t2_surname";
             this.lbl_t2_surname.Size = new System.Drawing.Size(79, 18);
             this.lbl_t2_surname.TabIndex = 1;
@@ -560,7 +720,7 @@
             // 
             this.lbl_t2_name.AutoSize = true;
             this.lbl_t2_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_t2_name.Location = new System.Drawing.Point(39, 44);
+            this.lbl_t2_name.Location = new System.Drawing.Point(161, 26);
             this.lbl_t2_name.Name = "lbl_t2_name";
             this.lbl_t2_name.Size = new System.Drawing.Size(47, 18);
             this.lbl_t2_name.TabIndex = 0;
@@ -588,6 +748,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btn_t3_print);
             this.tabPage3.Controls.Add(this.dgv_users);
             this.tabPage3.Controls.Add(this.lbl_t3_search);
             this.tabPage3.Controls.Add(this.btn_t3_renew);
@@ -602,6 +763,19 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Преглед на корисници";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_t3_print
+            // 
+            this.btn_t3_print.Enabled = false;
+            this.btn_t3_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t3_print.Location = new System.Drawing.Point(357, 622);
+            this.btn_t3_print.Name = "btn_t3_print";
+            this.btn_t3_print.Size = new System.Drawing.Size(145, 30);
+            this.btn_t3_print.TabIndex = 9;
+            this.btn_t3_print.Text = "Печати";
+            this.btn_t3_print.UseVisualStyleBackColor = true;
+            this.btn_t3_print.Visible = false;
+            this.btn_t3_print.Click += new System.EventHandler(this.btn_t3_print_Click);
             // 
             // dgv_users
             // 
@@ -762,7 +936,7 @@
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Location = new System.Drawing.Point(21, 314);
+            this.panel2.Location = new System.Drawing.Point(21, 299);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(632, 324);
             this.panel2.TabIndex = 3;
@@ -810,7 +984,7 @@
             this.dtp_t3_birthdate.Enabled = false;
             this.dtp_t3_birthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_t3_birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_t3_birthdate.Location = new System.Drawing.Point(197, 185);
+            this.dtp_t3_birthdate.Location = new System.Drawing.Point(197, 186);
             this.dtp_t3_birthdate.MaxDate = new System.DateTime(2015, 6, 30, 0, 0, 0, 0);
             this.dtp_t3_birthdate.MinDate = new System.DateTime(1915, 1, 1, 0, 0, 0, 0);
             this.dtp_t3_birthdate.Name = "dtp_t3_birthdate";
@@ -979,6 +1153,242 @@
             this.tb_t3_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t3_search_KeyPress);
             this.tb_t3_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_t3_search_KeyUp);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.panel3);
+            this.tabPage4.Controls.Add(this.btn_t4_print);
+            this.tabPage4.Controls.Add(this.dgv_activities);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.tb_t4_search);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(676, 663);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "Преглед на активности";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.lbl_t4_userCode);
+            this.panel3.Controls.Add(this.lbl_t4_age);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.lbl_t4_birthdate);
+            this.panel3.Controls.Add(this.label30);
+            this.panel3.Controls.Add(this.label31);
+            this.panel3.Controls.Add(this.lbl_t4_dateTo);
+            this.panel3.Controls.Add(this.pb_t4_photo);
+            this.panel3.Controls.Add(this.lbl_t4_dateFrom);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.lbl_t4_surname);
+            this.panel3.Controls.Add(this.lbl_t4_name);
+            this.panel3.Location = new System.Drawing.Point(26, 59);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(632, 209);
+            this.panel3.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(48, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 18);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Кориснички код:";
+            // 
+            // lbl_t4_userCode
+            // 
+            this.lbl_t4_userCode.AutoSize = true;
+            this.lbl_t4_userCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t4_userCode.Location = new System.Drawing.Point(214, 15);
+            this.lbl_t4_userCode.Name = "lbl_t4_userCode";
+            this.lbl_t4_userCode.Size = new System.Drawing.Size(131, 18);
+            this.lbl_t4_userCode.TabIndex = 19;
+            this.lbl_t4_userCode.Text = "// кориснички код";
+            // 
+            // lbl_t4_age
+            // 
+            this.lbl_t4_age.AutoSize = true;
+            this.lbl_t4_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t4_age.Location = new System.Drawing.Point(214, 107);
+            this.lbl_t4_age.Name = "lbl_t4_age";
+            this.lbl_t4_age.Size = new System.Drawing.Size(76, 18);
+            this.lbl_t4_age.TabIndex = 18;
+            this.lbl_t4_age.Text = "// возраст";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(48, 109);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 18);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Возраст:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(48, 83);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(121, 18);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Дата на раѓање:";
+            // 
+            // lbl_t4_birthdate
+            // 
+            this.lbl_t4_birthdate.AutoSize = true;
+            this.lbl_t4_birthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t4_birthdate.Location = new System.Drawing.Point(214, 83);
+            this.lbl_t4_birthdate.Name = "lbl_t4_birthdate";
+            this.lbl_t4_birthdate.Size = new System.Drawing.Size(126, 18);
+            this.lbl_t4_birthdate.TabIndex = 15;
+            this.lbl_t4_birthdate.Text = "// дата на раѓање";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(48, 61);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(74, 18);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "Презиме:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(48, 40);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(42, 18);
+            this.label31.TabIndex = 6;
+            this.label31.Text = "Име:";
+            // 
+            // lbl_t4_dateTo
+            // 
+            this.lbl_t4_dateTo.AutoSize = true;
+            this.lbl_t4_dateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t4_dateTo.Location = new System.Drawing.Point(214, 151);
+            this.lbl_t4_dateTo.Name = "lbl_t4_dateTo";
+            this.lbl_t4_dateTo.Size = new System.Drawing.Size(74, 18);
+            this.lbl_t4_dateTo.TabIndex = 5;
+            this.lbl_t4_dateTo.Text = "// дата до";
+            // 
+            // pb_t4_photo
+            // 
+            this.pb_t4_photo.BackColor = System.Drawing.Color.White;
+            this.pb_t4_photo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_t4_photo.Image = global::WindowsFormsApplication1.Properties.Resources.slika;
+            this.pb_t4_photo.InitialImage = global::WindowsFormsApplication1.Properties.Resources.slika;
+            this.pb_t4_photo.Location = new System.Drawing.Point(436, 15);
+            this.pb_t4_photo.Name = "pb_t4_photo";
+            this.pb_t4_photo.Size = new System.Drawing.Size(157, 180);
+            this.pb_t4_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_t4_photo.TabIndex = 4;
+            this.pb_t4_photo.TabStop = false;
+            // 
+            // lbl_t4_dateFrom
+            // 
+            this.lbl_t4_dateFrom.AutoSize = true;
+            this.lbl_t4_dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t4_dateFrom.Location = new System.Drawing.Point(214, 130);
+            this.lbl_t4_dateFrom.Name = "lbl_t4_dateFrom";
+            this.lbl_t4_dateFrom.Size = new System.Drawing.Size(74, 18);
+            this.lbl_t4_dateFrom.TabIndex = 3;
+            this.lbl_t4_dateFrom.Text = "// дата од";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(48, 135);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(73, 18);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Важност:";
+            // 
+            // lbl_t4_surname
+            // 
+            this.lbl_t4_surname.AutoSize = true;
+            this.lbl_t4_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t4_surname.Location = new System.Drawing.Point(214, 61);
+            this.lbl_t4_surname.Name = "lbl_t4_surname";
+            this.lbl_t4_surname.Size = new System.Drawing.Size(79, 18);
+            this.lbl_t4_surname.TabIndex = 1;
+            this.lbl_t4_surname.Text = "// презиме";
+            // 
+            // lbl_t4_name
+            // 
+            this.lbl_t4_name.AutoSize = true;
+            this.lbl_t4_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_t4_name.Location = new System.Drawing.Point(214, 40);
+            this.lbl_t4_name.Name = "lbl_t4_name";
+            this.lbl_t4_name.Size = new System.Drawing.Size(47, 18);
+            this.lbl_t4_name.TabIndex = 0;
+            this.lbl_t4_name.Text = "// име";
+            // 
+            // btn_t4_print
+            // 
+            this.btn_t4_print.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_t4_print.Enabled = false;
+            this.btn_t4_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_t4_print.Location = new System.Drawing.Point(510, 623);
+            this.btn_t4_print.Name = "btn_t4_print";
+            this.btn_t4_print.Size = new System.Drawing.Size(145, 30);
+            this.btn_t4_print.TabIndex = 22;
+            this.btn_t4_print.Text = "Печати";
+            this.btn_t4_print.UseVisualStyleBackColor = true;
+            // 
+            // dgv_activities
+            // 
+            this.dgv_activities.AllowUserToAddRows = false;
+            this.dgv_activities.AllowUserToDeleteRows = false;
+            this.dgv_activities.AllowUserToResizeColumns = false;
+            this.dgv_activities.AllowUserToResizeRows = false;
+            this.dgv_activities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_activities.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgv_activities.ColumnHeadersHeight = 30;
+            this.dgv_activities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_activities.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgv_activities.Location = new System.Drawing.Point(26, 274);
+            this.dgv_activities.MultiSelect = false;
+            this.dgv_activities.Name = "dgv_activities";
+            this.dgv_activities.ReadOnly = true;
+            this.dgv_activities.RowHeadersVisible = false;
+            this.dgv_activities.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dgv_activities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_activities.Size = new System.Drawing.Size(632, 335);
+            this.dgv_activities.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(26, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 18);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Пребарување:";
+            // 
+            // tb_t4_search
+            // 
+            this.tb_t4_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tb_t4_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.tb_t4_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_t4_search.Location = new System.Drawing.Point(26, 29);
+            this.tb_t4_search.Name = "tb_t4_search";
+            this.tb_t4_search.Size = new System.Drawing.Size(632, 24);
+            this.tb_t4_search.TabIndex = 1;
+            this.tb_t4_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_t4_search_KeyPress);
+            this.tb_t4_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_t4_search_KeyUp);
+            // 
             // printDialog1
             // 
             this.printDialog1.Document = this.printDocument1;
@@ -1067,6 +1477,11 @@
             this.ep_t3_dateFrom.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.ep_t3_dateFrom.ContainerControl = this;
             // 
+            // _dp_gold_membershipDataSet2
+            // 
+            this._dp_gold_membershipDataSet2.DataSetName = "_dp_gold_membershipDataSet";
+            this._dp_gold_membershipDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1095,6 +1510,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_t3_photo)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_t4_photo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_activities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_mail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_name)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t1_surname)).EndInit();
@@ -1110,6 +1531,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ep_t3_mail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t3_birthdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep_t3_dateFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._dp_gold_membershipDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1140,7 +1562,6 @@
         private System.Windows.Forms.Label lbl_t2_dateTo;
         private System.Windows.Forms.PictureBox pb_t2_photo;
         private System.Windows.Forms.Label lbl_t2_dateFrom;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl_t2_surname;
         private System.Windows.Forms.Label lbl_t2_name;
         private System.Windows.Forms.TextBox tb_t2_userCode;
@@ -1207,6 +1628,40 @@
         private System.Windows.Forms.ErrorProvider ep_t3_dateFrom;
         private System.Windows.Forms.TextBox tb_t3_activationCode;
         private System.Windows.Forms.Label lbl_t3_activationCode;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dgv_activities;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tb_t4_search;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lbl_t4_dateTo;
+        private System.Windows.Forms.PictureBox pb_t4_photo;
+        private System.Windows.Forms.Label lbl_t4_dateFrom;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbl_t4_surname;
+        private System.Windows.Forms.Label lbl_t4_name;
+        private System.Windows.Forms.Button btn_t4_print;
+        private System.Windows.Forms.Label lbl_t2_birthdate;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_t2_age;
+        private System.Windows.Forms.Label lbl_t2_visit;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lbl_t4_age;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbl_t4_birthdate;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_t4_userCode;
+        private _dp_gold_membershipDataSet _dp_gold_membershipDataSet2;
+        private System.Windows.Forms.Label lbl_t2_days;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button btn_t3_print;
 
 
 

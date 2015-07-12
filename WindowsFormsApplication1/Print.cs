@@ -54,6 +54,12 @@ namespace WindowsFormsApplication1
             string l7 = lbl_activationCode.Text;
             string tB7 = lbl_activationCode_value.Text;
 
+            //TADI - ANJA
+            string l10 = lbl_valid.Text;
+            string tB10 = lbl_dateFrom_value.Text;
+            string tB11 = lbl_dateTo_value.Text;
+            //
+
             string l8 = lbl_issueDate.Text;
             string tB8 = lbl_skopje.Text;
 

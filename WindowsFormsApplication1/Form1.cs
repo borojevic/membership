@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -46,14 +47,6 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //validacii
-            //
-            //tb_t1_name_Validated(this, e);
-            //tb_t1_surname_Validated(this, e);
-            //tb_t1_mail_Validated(this, e);
-            //tb_t1_phone_Validated(this, e);
-            //pb_t1_photo_Validated(this, e);
-
       //generating activation code
 
             long activationCode = FunctionClass.ActivationCodeGenerator();
@@ -74,8 +67,6 @@ namespace WindowsFormsApplication1
                 ep_t1_datefrom.GetError(dtp_t1_dateFrom) == "Okay." &&
                 !FunctionClass.SameAs(pb_t1_photo.Image, pb_t1_photo.InitialImage)
                 )
-             //  ep_t1_photo.GetError(pb_t1_photo) == "Validated"  )//&&
-               // ep_t1_activationCode.GetError(tb_t1_activationCode) == "Validated")
             {
 
                 MemoryStream ms = new MemoryStream();
@@ -102,9 +93,20 @@ namespace WindowsFormsApplication1
                 dateTimePicker1.Enabled = false;
                // dtp_t1_dateFrom.Value = DateTime.Today;
                 dtp_t1_dateFrom.Enabled = false;
-                button1.Enabled = false;
                 btn_printForm.Enabled = true;
                 MessageBox.Show("Успешно внесен корисник!! Честитки.");
+                if (button1.Enabled == true)
+                button1.Enabled = false;
+
+                ep_t1_activationCode.Clear();
+                ep_t1_birthdate.Clear();
+                ep_t1_datefrom.Clear();
+                ep_t1_mail.Clear();
+                ep_t1_name.Clear();
+                ep_t1_phone.Clear();
+                ep_t1_photo.Clear();
+                ep_t1_surname.Clear();
+                
             }
             else MessageBox.Show("Проблем.");
         }
@@ -118,7 +120,18 @@ namespace WindowsFormsApplication1
            // this.ep_t1_birthdate.Icon = Properties.Resources.err;
            // this.ep_t1_birthdate.SetError(dateTimePicker1, "error value changed");
 
-
+            //autocomplete
+            DataSet d = FunctionClass.Select_Users_By_SearchString(tb_t4_search.Text);
+            AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
+            foreach(DataRow dr in d.Tables["Data"].Rows)
+            {
+                MyCollection.Add(dr["name"] + " " + dr["surname"] + ", " + dr["id"]);
+                MyCollection.Add(dr["surname"] + " " + dr["name"] + ", " + dr["id"]);
+                MyCollection.Add(dr["id"] + ", " + dr["name"] + " " + dr["surname"]);
+                //CollectionId = Int32.Parse(dr["id"].ToString());
+                //lbl_t4_name.Text = CollectionId.ToString();
+            }
+            tb_t4_search.AutoCompleteCustomSource = MyCollection;
         }
 
         private void btn_printForm_Click(object sender, EventArgs e)
@@ -134,6 +147,8 @@ namespace WindowsFormsApplication1
             pr.setPhone = tb_t1_phone.Text;
             pr.setBirthdate = dateTimePicker1.Value.ToString("dd.MM.yyyy");
             pr.setActivationCode = tb_t1_activationCode.Text;
+            pr.setDateFrom = dtp_t1_dateFrom.Value.ToString("dd.MM.yyyy");
+            pr.setDateTo = (dtp_t1_dateFrom.Value.AddMonths(1)).ToString("dd.MM.yyyy");
             pr.Show();
             //this.Close();
 
@@ -156,12 +171,15 @@ namespace WindowsFormsApplication1
         {
             if (tb_t2_userCode.Text == "") 
             {
-                lbl_t2_name.Text = "Име:";
-                lbl_t2_surname.Text = "Презиме:";
-                lbl_t2_dateFrom.Text = "Дата од:";
-                lbl_t2_dateTo.Text = "Дата до:";
+                lbl_t2_name.Text = "// име:";
+                lbl_t2_surname.Text = "// презиме:";
+                lbl_t2_dateFrom.Text = "// дата од:";
+                lbl_t2_dateTo.Text = "// дата до:";
+                lbl_t2_birthdate.Text = "// дата на раѓање";
+                lbl_t2_age.Text = "// возраст";
                 pb_t2_photo.Image = Properties.Resources.slika;
                 tb_t2_time.Text = "";
+                lbl_t2_visit.Text = "// број";
             
             }
             else 
@@ -171,12 +189,18 @@ namespace WindowsFormsApplication1
                 {
                     lbl_t2_name.Text = ((DataRow)ds.Tables["Data"].Rows[0])["name"].ToString();
                     lbl_t2_surname.Text = ((DataRow)ds.Tables["Data"].Rows[0])["surname"].ToString();
+                    lbl_t2_birthdate.Text = ((DateTime)((DataRow)ds.Tables["Data"].Rows[0])["dateOfBirth"]).ToString("dd.MM.yyyy");
                     lbl_t2_dateFrom.Text = ((DateTime)((DataRow)ds.Tables["Data"].Rows[0])["dateFrom"]).ToString("dd.MM.yyyy");
                     lbl_t2_dateTo.Text = ((DateTime)((DataRow)ds.Tables["Data"].Rows[0])["dateTo"]).ToString("dd.MM.yyyy");
                     var data = (Byte[])(((DataRow)ds.Tables["Data"].Rows[0])["photo"]);
                     var ms = new MemoryStream(data);
                     pb_t2_photo.Image = Image.FromStream(ms);
-                    tb_t2_time.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+                    tb_t2_time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    lbl_t2_days.Text = FunctionClass.CalculateDaysLeft(((DateTime)((DataRow)ds.Tables["Data"].Rows[0])["dateFrom"]),
+                              ((DateTime)((DataRow)ds.Tables["Data"].Rows[0])["dateTo"])).ToString();
+                    lbl_t2_age.Text = FunctionClass.CalculateAge((DateTime)((DataRow)ds.Tables["Data"].Rows[0])["dateOfBirth"]).ToString() + " години";
+                    DataSet ds2 = FunctionClass.Count_Activities_By_UserID(Int32.Parse(tb_t2_userCode.Text));
+                    lbl_t2_visit.Text = ((DataRow)ds2.Tables["Data"].Rows[0])["number"].ToString();                        
                 }
                 //else
                 //    MessageBox.Show("Не постои корисник со внесениот код.");
@@ -186,11 +210,12 @@ namespace WindowsFormsApplication1
 
         private void btn_t2_submit_Click(object sender, EventArgs e)
         {
-            FunctionClass.Insert_Activity(Convert.ToDateTime(tb_t2_time.Text), tb_t2_serviceID.Text, Int32.Parse(tb_t2_userCode.Text));
+            FunctionClass.Insert_Activity(DateTime.ParseExact(tb_t2_time.Text, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture), tb_t2_serviceID.Text, Int32.Parse(tb_t2_userCode.Text));
             MessageBox.Show("Успешен внес.");
             tb_t2_serviceID.Text = "";
             tb_t2_userCode.Text = "";
             btn_t2_submit.Enabled = false;
+
         }
 
         private void dgv_users_SelectionChanged(object sender, EventArgs e)
@@ -275,6 +300,7 @@ namespace WindowsFormsApplication1
 
             lbl_t3_activationCode.Visible = false;
             tb_t3_activationCode.Visible = false;
+            btn_t3_print.Visible = false;
         }
 
         private void btn_t3_upload_Click(object sender, EventArgs e)
@@ -295,49 +321,43 @@ namespace WindowsFormsApplication1
                 pb_t3_photo.Image.Save(ms, ImageFormat.Jpeg);
                 FunctionClass.Update_User(Int32.Parse(dgv_users.SelectedRows[0].Cells[0].Value.ToString()),tb_t3_name.Text, tb_t3_surname.Text, tb_t3_mail.Text, ms.ToArray(), tb_t3_phone.Text, dtp_t3_birthdate.Value);
 
-               
+                this.usersTableAdapter1.Fill(this._dp_gold_membershipDataSet1.Users);
+                // separate load dgv_users data function ? (instead of using dataSet)
+                tb_t3_activationCode.Text = "";
+                tb_t3_activationCode.Visible = false;
+                lbl_t3_activationCode.Visible = false;
+
+                dtp_t3_birthdate.Enabled = false;
+                btn_t3_upload.Enabled = false;
+                btn_t3_submit.Enabled = false;
+
+                dtp_t3_dateFrom.Visible = false;
+                dtp_t3_dateFrom.Enabled = false;
+
+                tb_t3_name.Enabled = false;
+                tb_t3_surname.Enabled = false;
+                tb_t3_mail.Enabled = false;
+                tb_t3_phone.Enabled = false;
+                btn_t3_upload.Enabled = false;
+                t3_flag = -1;
+                lbl_t3_search.Focus();
+
+                ep_t3_name.Clear();
+                ep_t3_surname.Clear();
+                ep_t3_mail.Clear();
+                ep_t3_phone.Clear();
+                ep_t3_birthdate.Clear();
+                ep_t3_dateFrom.Clear();
             }
             else if(t3_flag == 2)
             { 
-                //long activationCode = FunctionClass.ActivationCodeGenerator();
-                //while (!FunctionClass.ValidateActivationCode(activationCode.ToString()))
-                //{
-                //    activationCode = FunctionClass.ActivationCodeGenerator();
-                //}
-                //tb_t1_activationCode.Text = activationCode.ToString();
                 Int32 userID = Int32.Parse(dgv_users.SelectedRows[0].Cells[0].Value.ToString());
                 FunctionClass.Insert_GoldCard(dtp_t3_dateFrom.Value, dtp_t3_dateFrom.Value.AddMonths(1), tb_t3_activationCode.Text, userID);
+                btn_t3_print.Enabled = true;
+                dtp_t3_dateFrom.Enabled = false;
+                lbl_t3_dateTo.Enabled = false;
             }
-
-            this.usersTableAdapter1.Fill(this._dp_gold_membershipDataSet1.Users);
-            // separate load dgv_users data function ? (instead of using dataSet)
-            tb_t3_activationCode.Text = "";
-            tb_t3_activationCode.Visible = false;
-            lbl_t3_activationCode.Visible = false;
-
-            dtp_t3_birthdate.Enabled = false;
-            btn_t3_upload.Enabled = false;
-            btn_t3_submit.Enabled = false;
-
-            dtp_t3_dateFrom.Visible = false;
-            dtp_t3_dateFrom.Enabled = false;
-
-            tb_t3_name.Enabled = false;
-            tb_t3_surname.Enabled = false;
-            tb_t3_mail.Enabled = false;
-            tb_t3_phone.Enabled = false;
-            btn_t3_upload.Enabled = false;
-            t3_flag = -1;
-            lbl_t3_search.Focus();
-
-            ep_t3_name.Clear();
-            ep_t3_surname.Clear();
-            ep_t3_mail.Clear();
-            ep_t3_phone.Clear();
-            ep_t3_birthdate.Clear();
-            ep_t3_dateFrom.Clear();
-            //ep_t1_activationCode.Clear();
-           // ep_t1_photo.Clear();
+    
         }
 
         private void tb_t3_search_KeyUp(object sender, KeyEventArgs e)
@@ -383,7 +403,7 @@ namespace WindowsFormsApplication1
             btn_t3_submit.Enabled = true;
             tb_t3_activationCode.Visible = true;
             lbl_t3_activationCode.Visible = true;
-
+            btn_t3_print.Visible = true;
 
         }
 
@@ -918,6 +938,107 @@ namespace WindowsFormsApplication1
             dtp_t3_dateFrom_ValueChanged(this, e);
         }
 
+        private void tb_t4_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8 || Char.IsLetter(e.KeyChar));
+        }
+
+        private void tb_t4_search_KeyUp(object sender, KeyEventArgs e)
+        {
+            int id;
+            string str = tb_t4_search.Text;
+            if(str != String.Empty)
+            {
+                string[] words = str.Split(' ', ',');
+                foreach(string s in words)
+                {
+                    bool isNumeric = int.TryParse(s, out id);
+                    if (isNumeric)
+                    {
+                        DataSet d1 = FunctionClass.Select_User_By_UserID(id);
+                        if (d1.Tables["Data"].Rows.Count > 0)
+                        {
+                            lbl_t4_userCode.Text = id.ToString();
+                            lbl_t4_name.Text = ((DataRow)d1.Tables["Data"].Rows[0])["name"].ToString();
+                            lbl_t4_surname.Text = ((DataRow)d1.Tables["Data"].Rows[0])["surname"].ToString();
+                            lbl_t4_birthdate.Text = ((DateTime)((DataRow)d1.Tables["Data"].Rows[0])["dateOfBirth"]).ToString("dd.MM.yyyy");
+                            lbl_t4_dateFrom.Text = ((DateTime)((DataRow)d1.Tables["Data"].Rows[0])["dateFrom"]).ToString("dd.MM.yyyy");
+                            lbl_t4_age.Text = FunctionClass.CalculateAge((DateTime)((DataRow)d1.Tables["Data"].Rows[0])["dateOfBirth"]).ToString() + " години";
+                            lbl_t4_dateTo.Text = ((DateTime)((DataRow)d1.Tables["Data"].Rows[0])["dateTo"]).ToString("dd.MM.yyyy");
+                            var data = (Byte[])(((DataRow)d1.Tables["Data"].Rows[0])["photo"]);
+                            var ms = new MemoryStream(data);
+                            pb_t4_photo.Image = Image.FromStream(ms);
+                            DataSet d2 = FunctionClass.Select_Activities_By_UserID(id);
+                           
+                            // fill dgv_activities
+                            DataTable dt = d2.Tables["Data"];
+                            dgv_activities.DataSource = dt;
+                            dgv_activities.Columns[0].HeaderText = "Датум";
+                            dgv_activities.Columns[1].HeaderText = "Услуга";
+
+                            if (dgv_activities.DataSource != null && dgv_activities.Rows.Count > 0)
+                                btn_t4_print.Enabled = true;
+                            else
+                                btn_t4_print.Enabled = false;
+                        }
+                      
+                        break;
+                    }
+                   
+                }
+            }
+            else
+            {
+                lbl_t4_userCode.Text = "";
+                lbl_t4_name.Text = "";
+                lbl_t4_surname.Text = "";
+                lbl_t4_birthdate.Text = "";
+                lbl_t4_dateFrom.Text = "";
+                lbl_t4_age.Text = "";
+                lbl_t4_dateTo.Text = "";
+                pb_t4_photo.Image = pb_t4_photo.InitialImage;
+                dgv_activities.DataSource = null;
+                dgv_activities.Rows.Clear();
+                btn_t4_print.Enabled = false;
+            }
+
+            
+
+
+        }
+
+        private void btn_t3_print_Click(object sender, EventArgs e)
+        {
+            Print pr = new Print();
+            this.Hide();
+            pr.setUserCode = dgv_users.SelectedRows[0].Cells[0].Value.ToString();
+            pr.setName = tb_t3_name.Text;
+            pr.setSurname = tb_t3_surname.Text;
+            pr.setMail = tb_t3_mail.Text;
+            pr.setPhone = tb_t3_phone.Text;
+            pr.setBirthdate = dtp_t3_birthdate.Value.ToString("dd.MM.yyyy");
+            pr.setActivationCode = tb_t3_activationCode.Text;
+            pr.setDateFrom = dtp_t3_dateFrom.Value.ToString("dd.MM.yyyy");
+            pr.setDateTo = (dtp_t3_dateFrom.Value.AddMonths(1)).ToString("dd.MM.yyyy");
+            pr.Show();
+           
+            //ID = -1;
+            //tb_t3_name.Text = "";
+            //tb_t3_surname.Text = "";
+            //tb_t3_mail.Text = "";
+            //pb_t3_photo.Image = Properties.Resources.slika;
+            //tb_t3_phone.Text = "";
+            //tb_t3_activationCode.Text = "";
+            //dtp_t3_birthdate.Value = DateTime.Today;
+            //dtp_t3_dateFrom.Value = DateTime.Today;
+
+            btn_t3_print.Enabled = false;
+            btn_t3_print.Visible = false;
+
+        }
+
+       
+       
 
 
 
